@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ThaiRide | Premium Airport Transfer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,10 +22,16 @@ body{
   justify-content:center;
   align-items:flex-start;
   background:black;
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
-/* พื้นหลังรูปรถ */
+/* Safe area สำหรับ iPhone */
+body{
+  padding-top:env(safe-area-inset-top);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+
+/* Background */
 .background{
   position:fixed;
   top:0;
@@ -33,11 +39,10 @@ body{
   width:100%;
   height:100%;
   background:url('car-bg.jpg') center/cover no-repeat;
-  opacity:0.15;
+  opacity:0.18;
   z-index:-2;
 }
 
-/* เอฟเฟกต์แสง */
 .light-effect{
   position:fixed;
   width:200%;
@@ -55,7 +60,8 @@ body{
 
 .container{
   text-align:center;
-  padding-top:70px;
+  padding-top:80px;
+  padding-bottom:40px;
   width:90%;
   max-width:500px;
 }
@@ -71,21 +77,24 @@ h1{
 .subtitle{
   margin-top:10px;
   font-size:16px;
-  color:#bbb;
-  margin-bottom:30px;
+  color:#ccc;
+  margin-bottom:35px;
 }
 
+/* Buttons */
 .button{
-  display:inline-block;
-  padding:16px 45px;
+  display:block;
+  width:100%;
+  padding:16px;
   font-size:16px;
   font-weight:600;
   border-radius:50px;
   text-decoration:none;
   transition:0.3s;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
+/* โทรจริง */
 .call{
   background:linear-gradient(45deg,#ff0000,#ff3b3b);
   color:white;
@@ -95,6 +104,22 @@ h1{
 .call:hover{
   transform:translateY(-3px);
   box-shadow:0 15px 35px rgba(255,0,0,0.6);
+}
+
+/* LINE */
+.line{
+  background:linear-gradient(45deg,#00c300,#00e676);
+  color:white;
+  box-shadow:0 10px 25px rgba(0,255,136,0.4);
+}
+
+.line:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(0,255,136,0.6);
+}
+
+.qr-box{
+  margin-top:20px;
 }
 
 .qr-box img{
@@ -129,10 +154,9 @@ h1{
   color:black;
 }
 
-/* iPhone Responsive */
+/* Mobile */
 @media(max-width:480px){
-  h1{font-size:32px;}
-  .button{padding:14px 35px;font-size:15px;}
+  h1{font-size:30px;}
   .qr-box img{width:170px;}
 }
 </style>
@@ -145,11 +169,17 @@ h1{
 
 <div class="container">
 
-  <h1 id="title">ThaiRide</h1>
+  <h1>ThaiRide</h1>
   <div class="subtitle" id="subtitle">Premium Airport Transfer Service</div>
 
-  <a href="https://lin.ee/MqSk0kZy" target="_blank" class="button call" id="callBtn">
-    CALL TAXI NOW
+  <!-- ปุ่มโทรจริง -->
+  <a href="tel:+66901234567" class="button call" id="callBtn">
+    📞 CALL NOW
+  </a>
+
+  <!-- ปุ่ม LINE -->
+  <a href="https://lin.ee/MqSk0kZy" target="_blank" class="button line" id="lineBtn">
+    💬 Book via LINE
   </a>
 
   <div class="qr-box">
@@ -170,11 +200,13 @@ h1{
 function setLang(lang){
   if(lang === 'th'){
     document.getElementById('subtitle').innerText = "บริการรับส่งสนามบินระดับพรีเมียม";
-    document.getElementById('callBtn').innerText = "เรียกรถตอนนี้";
+    document.getElementById('callBtn').innerText = "📞 โทรตอนนี้";
+    document.getElementById('lineBtn').innerText = "💬 จองผ่าน LINE";
     document.getElementById('scanText').innerText = "สแกนหรือแตะ QR เพื่อจองผ่าน LINE";
   }else{
     document.getElementById('subtitle').innerText = "Premium Airport Transfer Service";
-    document.getElementById('callBtn').innerText = "CALL TAXI NOW";
+    document.getElementById('callBtn').innerText = "📞 CALL NOW";
+    document.getElementById('lineBtn').innerText = "💬 Book via LINE";
     document.getElementById('scanText').innerText = "Scan or Tap QR to Book via LINE";
   }
 }
