@@ -79,6 +79,7 @@ transition:.3s;
 background:#c1121f;
 }
 
+/* SECTION */
 .section{
 padding:80px 20px;
 text-align:center;
@@ -93,7 +94,7 @@ padding:20px;
 font-size:13px;
 }
 
-/* FIXED FLOATING BUTTONS */
+/* FLOATING BUTTONS (แก้ไม่ให้ตกแน่นอน) */
 .line-btn,
 .whatsapp-btn{
 position:fixed;
@@ -108,18 +109,19 @@ color:white;
 font-size:12px;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
 z-index:9999;
 }
 
-.line-btn{
-bottom:100px;   /* ปรับตำแหน่ง */
-background:#00c300;
+/* รองรับ safe area มือถือ */
+.whatsapp-btn{
+bottom:calc(25px + env(safe-area-inset-bottom));
+background:#25d366;
 }
 
-.whatsapp-btn{
-bottom:30px;
-background:#25d366;
+.line-btn{
+bottom:calc(95px + env(safe-area-inset-bottom));
+background:#00c300;
 }
 </style>
 </head>
@@ -153,8 +155,9 @@ background:#25d366;
 © 2026 ThaiRide Travel | Premium Transport Service
 </footer>
 
-<a href="#" class="line-btn">LINE</a>
-<a href="#" class="whatsapp-btn">WA</a>
+<!-- ปุ่มลอย -->
+<a href="https://line.me" target="_blank" class="line-btn">LINE</a>
+<a href="https://wa.me/66812345678" target="_blank" class="whatsapp-btn">WA</a>
 
 </body>
 </html>
