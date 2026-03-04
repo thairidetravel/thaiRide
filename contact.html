@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ติดต่อจองรถ | ThaiRide Travel</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#000;color:#fff;text-align:center;}
+.form-section{padding:40px 20px;}
+input,select,textarea{
+width:90%;max-width:400px;padding:12px;margin:8px auto;
+border-radius:8px;border:none;display:block;}
+textarea{height:100px;}
+button{
+width:90%;max-width:400px;padding:14px;margin-top:15px;
+border:none;border-radius:30px;background:#ffcc00;font-weight:bold;}
+a{color:#00ff88;text-decoration:none;}
+</style>
+</head>
+
+<body>
+
+<div class="form-section">
+
+<h2>ติดต่อจองรถ</h2>
+
+<form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="text" name="ชื่อ" placeholder="ชื่อผู้จอง" required>
+<input type="tel" name="เบอร์โทร" placeholder="เบอร์โทรติดต่อ" required>
+
+<label>วันที่รับ</label>
+<input type="date" name="วันที่รับ" required>
+
+<label>เวลารับ</label>
+<input type="time" name="เวลารับ" required>
+
+<input type="text" name="สถานที่รับ" placeholder="โรงแรม / คอนโด / หมู่บ้าน" required>
+<input type="text" name="รายละเอียดสถานที่รับ" placeholder="บ้านเลขที่ / ห้อง / อาคาร A หรือ B" required>
+
+<select name="สถานที่ไปส่ง" required>
+<option value="">เลือกสนามบินปลายทาง</option>
+<option>สนามบินสุวรรณภูมิ</option>
+<option>สนามบินดอนเมือง</option>
+</select>
+
+<select name="ประเภทรถ" required>
+<option value="">เลือกประเภทรถ</option>
+<option>Sedan</option>
+<option>SUV</option>
+<option>Van</option>
+</select>
+
+<input type="number" name="จำนวนผู้โดยสาร" placeholder="จำนวนผู้โดยสาร" required>
+<input type="number" name="จำนวนกระเป๋า" placeholder="จำนวนกระเป๋า" required>
+
+<textarea name="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม"></textarea>
+
+<button type="submit">ยืนยันการจอง</button>
+
+</form>
+
+<br>
+<a href="index.html">← กลับหน้าหลัก</a>
+
+</div>
+
+</body>
+</html>
