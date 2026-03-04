@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ThaiRide Travel | Premium Airport Transfer</title>
+<title>ThaiRide Travel | Luxury Airport Transfer Thailand</title>
+
+<meta name="description" content="Luxury Airport Transfer, Private Driver, VIP Transport and Private Tour in Thailand. Professional service and premium vehicles.">
+<meta name="keywords" content="airport transfer thailand, private driver thailand, vip transport thailand, alphard rental thailand">
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -23,30 +26,31 @@ color:#333;
 
 /* NAV */
 nav{
-background:#0d1b2a;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(13,27,42,0.95);
 color:white;
-padding:10px 30px;
+padding:15px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:14px;
+z-index:1000;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin-left:20px;
-transition:.3s;
-}
-
-nav a:hover{
-opacity:0.7;
+font-size:14px;
 }
 
 /* HERO */
 .hero{
-min-height:75vh;
-background:linear-gradient(135deg,#0d1b2a,#1b263b);
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('hero.jpg') center/cover no-repeat;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -57,16 +61,14 @@ padding:20px;
 }
 
 .hero h1{
-font-size:48px;
-font-weight:700;
-margin-bottom:15px;
+font-size:50px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
 margin-bottom:30px;
-max-width:750px;
-opacity:0.9;
+max-width:700px;
 }
 
 .btn{
@@ -74,14 +76,12 @@ padding:15px 35px;
 background:#e63946;
 color:white;
 text-decoration:none;
-font-size:16px;
 border-radius:50px;
 transition:.3s;
 }
 
 .btn:hover{
 background:#c1121f;
-transform:translateY(-3px);
 }
 
 /* SECTION */
@@ -95,19 +95,20 @@ font-size:32px;
 margin-bottom:40px;
 }
 
-/* CARD GRID */
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 }
 
+/* CARD */
 .card{
 background:white;
-padding:40px 25px;
 border-radius:20px;
+overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 transition:.4s;
 }
@@ -117,17 +118,20 @@ transform:translateY(-10px);
 box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
-.card h3{
-margin-bottom:15px;
-font-size:20px;
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
-/* REVIEW */
-.review{
-max-width:800px;
-margin:auto;
-font-style:italic;
-margin-bottom:30px;
+.card h3{
+padding:20px 0 10px 0;
+}
+
+.card p{
+padding-bottom:20px;
+font-size:14px;
+color:#555;
 }
 
 /* FOOTER */
@@ -136,36 +140,25 @@ background:#0d1b2a;
 color:white;
 text-align:center;
 padding:25px;
-font-size:14px;
 }
 
-/* FLOAT BUTTONS */
-.line-btn,
-.whatsapp-btn{
+/* FLOAT BUTTON */
+.line-btn{
 position:fixed;
 right:20px;
-width:55px;
-height:55px;
+bottom:calc(30px + env(safe-area-inset-bottom));
+background:#00c300;
+width:60px;
+height:60px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 color:white;
-font-size:12px;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
 z-index:9999;
-}
-
-.whatsapp-btn{
-bottom:calc(25px + env(safe-area-inset-bottom));
-background:#25d366;
-}
-
-.line-btn{
-bottom:calc(95px + env(safe-area-inset-bottom));
-background:#00c300;
 }
 </style>
 </head>
@@ -175,79 +168,68 @@ background:#00c300;
 <nav>
 <div><strong>ThaiRide Travel</strong></div>
 <div>
-<a href="#services">บริการ</a>
-<a href="#why">ทำไมเลือกเรา</a>
-<a href="#review">รีวิว</a>
-<a href="tel:0812345678">ติดต่อ</a>
+<a href="#fleet">Fleet</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
 <div class="hero">
-<h1>Luxury Airport Transfer in Thailand</h1>
-<p>Professional Private Driver & VIP Transport Service with Premium Experience</p>
+<h1>Luxury Airport Transfer</h1>
+<p>Premium Private Driver & VIP Transport Service in Thailand</p>
 <a href="tel:0812345678" class="btn">Book Now</a>
 </div>
 
-<!-- SERVICES -->
-<div id="services" class="section">
-<h2>Our Services</h2>
+<!-- FLEET -->
+<div id="fleet" class="section">
+<h2>Our Fleet</h2>
+
 <div class="grid">
-<div class="card">
-<h3>Airport Transfer</h3>
-<p>Safe and punctual airport pickup & drop-off service.</p>
-</div>
 
 <div class="card">
-<h3>Private Driver</h3>
-<p>Professional chauffeur for your personal or business trips.</p>
+<img src="altis.jpg">
+<h3>Toyota Altis</h3>
+<p>Comfort sedan for 1-3 passengers.</p>
 </div>
 
 <div class="card">
-<h3>VIP Transport</h3>
-<p>Luxury vehicles for premium clients and executives.</p>
+<img src="innova.jpg">
+<h3>Toyota Innova</h3>
+<p>Spacious MPV for family travel.</p>
 </div>
 
 <div class="card">
-<h3>Private Tour</h3>
-<p>Explore Thailand comfortably with experienced drivers.</p>
-</div>
-</div>
-</div>
-
-<!-- WHY US -->
-<div id="why" class="section" style="background:#eef2f7;">
-<h2>Why Choose ThaiRide Travel</h2>
-<div class="grid">
-<div class="card">
-<h3>Professional Drivers</h3>
-<p>Experienced, polite and English-speaking drivers.</p>
+<img src="camry.jpg">
+<h3>Toyota Camry</h3>
+<p>Executive sedan with premium comfort.</p>
 </div>
 
 <div class="card">
-<h3>Always On Time</h3>
-<p>We value punctuality and reliability.</p>
+<img src="fortuner.jpg">
+<h3>Toyota Fortuner</h3>
+<p>Luxury SUV for VIP clients.</p>
 </div>
 
 <div class="card">
-<h3>Clean & Safe Vehicles</h3>
-<p>Well-maintained and insured vehicles.</p>
+<img src="alphard.jpg">
+<h3>Toyota Alphard</h3>
+<p>Ultimate VIP van experience.</p>
 </div>
+
+<div class="card">
+<img src="van.jpg">
+<h3>VIP Van / Commuter</h3>
+<p>Group transfer up to 10 passengers.</p>
+</div>
+
 </div>
 </div>
 
-<!-- REVIEW -->
-<div id="review" class="section">
-<h2>Customer Reviews</h2>
-<p class="review">"Excellent service, very professional and on time. Highly recommended!" ⭐⭐⭐⭐⭐</p>
-<p class="review">"Smooth ride and friendly driver. Will book again!" ⭐⭐⭐⭐⭐</p>
-</div>
-
-<footer>
-© 2026 ThaiRide Travel | Premium Transport Service
+<footer id="contact">
+<p>Contact: 081-234-5678</p>
+<p>© 2026 ThaiRide Travel</p>
 </footer>
 
 <a href="https://line.me" target="_blank" class="line-btn">LINE</a>
-<a href="https://wa.me/66812345678" target="_blank" class="whatsapp-btn">WA</a>
 
 </body>
 </html>
