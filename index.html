@@ -21,15 +21,15 @@ background:#f4f6f9;
 color:#333;
 }
 
-/* TOP NAV (บางแบบรูป 2) */
+/* NAV บาง */
 nav{
 background:#0d1b2a;
 color:white;
-padding:6px 20px;   /* ทำให้บาง */
+padding:6px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:13px;     /* ตัวหนังสือเล็กลง */
+font-size:13px;
 }
 
 nav a{
@@ -38,26 +38,30 @@ text-decoration:none;
 margin-left:15px;
 }
 
-/* HERO */
+/* HERO แก้พื้นที่ว่างด้านบน */
 .hero{
-height:100vh;
+min-height:80vh;              /* จาก 100vh เหลือ 80vh */
 background:linear-gradient(135deg,#0d1b2a,#1b263b);
 display:flex;
 flex-direction:column;
-justify-content:center;
+justify-content:flex-start;   /* จาก center เป็น start */
 align-items:center;
 text-align:center;
 color:white;
-padding:20px;
+padding-top:120px;            /* คุมระยะบนเอง */
+padding-left:20px;
+padding-right:20px;
+padding-bottom:60px;
 }
 
 .hero h1{
 font-size:42px;
+margin-bottom:15px;
 }
 
 .hero p{
 font-size:18px;
-margin:20px 0;
+margin-bottom:25px;
 max-width:700px;
 }
 
@@ -139,12 +143,6 @@ font-size:14px;
 <p>✔ Private Driver</p>
 <p>✔ VIP Transport</p>
 <p>✔ Private Tour Thailand</p>
-</div>
-
-<div id="review" class="section" style="background:#f1f1f1;">
-<h2>รีวิวจากลูกค้า</h2>
-<p>⭐️⭐️⭐️⭐️⭐️ บริการดีมาก ตรงเวลา รถสะอาด</p>
-<p>⭐️⭐️⭐️⭐️⭐️ คนขับสุภาพ มืออาชีพ</p>
 </div>
 
 <footer>
