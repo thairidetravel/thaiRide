@@ -11,10 +11,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* HERO HEADER */
+/* HERO */
 .hero {
     position: relative;
-    height: 450px; /* ไม่เต็มจอ */
+    height: 450px;
     background: url('hero_01.png') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -36,37 +36,64 @@ body {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 42px;
     margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 25px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .hero-buttons a {
     text-decoration: none;
-    padding: 12px 24px;
-    margin: 0 10px;
+    padding: 10px 20px;
+    margin: 0 8px;
     border-radius: 6px;
     font-weight: bold;
-    display: inline-block;
+    color: white;
 }
 
-.btn-green {
+.btn-green { background: #28a745; }
+.btn-blue { background: #007bff; }
+
+/* CONTACT FORM */
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+.contact h2 {
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 25px;
     background: #28a745;
     color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.btn-blue {
-    background: #007bff;
-    color: white;
-}
-
-.btn-green:hover,
-.btn-blue:hover {
-    opacity: 0.85;
+button:hover {
+    opacity: 0.9;
 }
 </style>
 </head>
@@ -83,6 +110,20 @@ body {
         </div>
     </div>
 </header>
+
+<section class="contact">
+    <h2>Contact / Booking</h2>
+
+    <form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+</section>
 
 </body>
 </html>
