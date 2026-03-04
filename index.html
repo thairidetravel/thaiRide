@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ThaiRide Travel | Airport Transfer Thailand</title>
+<title>ThaiRide Travel | Premium Airport Transfer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -25,48 +25,52 @@ color:#333;
 nav{
 background:#0d1b2a;
 color:white;
-padding:6px 20px;
+padding:10px 30px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:13px;
+font-size:14px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:15px;
+margin-left:20px;
+transition:.3s;
+}
+
+nav a:hover{
+opacity:0.7;
 }
 
 /* HERO */
 .hero{
-min-height:65vh;
+min-height:75vh;
 background:linear-gradient(135deg,#0d1b2a,#1b263b);
 display:flex;
 flex-direction:column;
-justify-content:flex-start;
+justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
-padding-top:60px;
-padding-left:20px;
-padding-right:20px;
-padding-bottom:40px;
+padding:20px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:48px;
+font-weight:700;
 margin-bottom:15px;
 }
 
 .hero p{
-font-size:18px;
-margin-bottom:25px;
-max-width:700px;
+font-size:20px;
+margin-bottom:30px;
+max-width:750px;
+opacity:0.9;
 }
 
 .btn{
-padding:14px 30px;
+padding:15px 35px;
 background:#e63946;
 color:white;
 text-decoration:none;
@@ -77,24 +81,65 @@ transition:.3s;
 
 .btn:hover{
 background:#c1121f;
+transform:translateY(-3px);
 }
 
 /* SECTION */
 .section{
-padding:80px 20px;
+padding:100px 20px;
 text-align:center;
-background:white;
 }
 
+.section h2{
+font-size:32px;
+margin-bottom:40px;
+}
+
+/* CARD GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:40px 25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:20px;
+}
+
+/* REVIEW */
+.review{
+max-width:800px;
+margin:auto;
+font-style:italic;
+margin-bottom:30px;
+}
+
+/* FOOTER */
 footer{
 background:#0d1b2a;
 color:white;
 text-align:center;
-padding:20px;
-font-size:13px;
+padding:25px;
+font-size:14px;
 }
 
-/* FLOATING BUTTONS (แก้ไม่ให้ตกแน่นอน) */
+/* FLOAT BUTTONS */
 .line-btn,
 .whatsapp-btn{
 position:fixed;
@@ -113,7 +158,6 @@ box-shadow:0 4px 12px rgba(0,0,0,0.3);
 z-index:9999;
 }
 
-/* รองรับ safe area มือถือ */
 .whatsapp-btn{
 bottom:calc(25px + env(safe-area-inset-bottom));
 background:#25d366;
@@ -132,30 +176,76 @@ background:#00c300;
 <div><strong>ThaiRide Travel</strong></div>
 <div>
 <a href="#services">บริการ</a>
+<a href="#why">ทำไมเลือกเรา</a>
 <a href="#review">รีวิว</a>
 <a href="tel:0812345678">ติดต่อ</a>
 </div>
 </nav>
 
 <div class="hero">
-<h1>ThaiRide Travel</h1>
-<p>Professional Airport Transfer & Private Tour Service in Thailand</p>
-<a href="tel:0812345678" class="btn">โทรหาเรา</a>
+<h1>Luxury Airport Transfer in Thailand</h1>
+<p>Professional Private Driver & VIP Transport Service with Premium Experience</p>
+<a href="tel:0812345678" class="btn">Book Now</a>
 </div>
 
+<!-- SERVICES -->
 <div id="services" class="section">
-<h2>บริการของเรา</h2>
-<p>✔ Airport Transfer</p>
-<p>✔ Private Driver</p>
-<p>✔ VIP Transport</p>
-<p>✔ Private Tour Thailand</p>
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card">
+<h3>Airport Transfer</h3>
+<p>Safe and punctual airport pickup & drop-off service.</p>
+</div>
+
+<div class="card">
+<h3>Private Driver</h3>
+<p>Professional chauffeur for your personal or business trips.</p>
+</div>
+
+<div class="card">
+<h3>VIP Transport</h3>
+<p>Luxury vehicles for premium clients and executives.</p>
+</div>
+
+<div class="card">
+<h3>Private Tour</h3>
+<p>Explore Thailand comfortably with experienced drivers.</p>
+</div>
+</div>
+</div>
+
+<!-- WHY US -->
+<div id="why" class="section" style="background:#eef2f7;">
+<h2>Why Choose ThaiRide Travel</h2>
+<div class="grid">
+<div class="card">
+<h3>Professional Drivers</h3>
+<p>Experienced, polite and English-speaking drivers.</p>
+</div>
+
+<div class="card">
+<h3>Always On Time</h3>
+<p>We value punctuality and reliability.</p>
+</div>
+
+<div class="card">
+<h3>Clean & Safe Vehicles</h3>
+<p>Well-maintained and insured vehicles.</p>
+</div>
+</div>
+</div>
+
+<!-- REVIEW -->
+<div id="review" class="section">
+<h2>Customer Reviews</h2>
+<p class="review">"Excellent service, very professional and on time. Highly recommended!" ⭐⭐⭐⭐⭐</p>
+<p class="review">"Smooth ride and friendly driver. Will book again!" ⭐⭐⭐⭐⭐</p>
 </div>
 
 <footer>
 © 2026 ThaiRide Travel | Premium Transport Service
 </footer>
 
-<!-- ปุ่มลอย -->
 <a href="https://line.me" target="_blank" class="line-btn">LINE</a>
 <a href="https://wa.me/66812345678" target="_blank" class="whatsapp-btn">WA</a>
 
