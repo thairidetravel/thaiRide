@@ -1,69 +1,153 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ThaiRide Travel | รถรับส่งสนามบิน กรุงเทพ</title>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f5f5f5;
+}
 
-<!-- SEO -->
-<meta name="description" content="บริการรถรับส่งสนามบินสุวรรณภูมิ และดอนเมือง พร้อมคนขับมืออาชีพ จองง่ายผ่าน LINE">
-<meta name="keywords" content="รถรับส่งสนามบิน, สุวรรณภูมิ, ดอนเมือง, รถเช่าพร้อมคนขับ, กรุงเทพ">
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#0d2d4a;
+color:white;
+}
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
+.logo img{
+height:70px;
+}
 
-<style>
-body{margin:0;font-family:Arial;background:#000;color:#fff;text-align:center;}
-.hero{
-background:url('hero_01.png') center/cover no-repeat;
-height:280px;display:flex;align-items:center;justify-content:center;position:relative;}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.5);}
-.hero-content{position:relative;z-index:2;}
-.container{padding:30px 20px;}
-.btn{display:block;width:90%;max-width:400px;margin:12px auto;padding:15px;border-radius:30px;text-decoration:none;font-weight:bold;color:#fff;}
-.red{background:#ff2d2d;}
-.green{background:#00cc44;}
-.blue{background:#2d6cff;}
-.dark{background:#111;border:1px solid #00ff88;}
-footer{padding:20px;font-size:14px;opacity:0.7;}
-</style>
-</head>
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:bold;
+}
 
-<body>
+nav a:hover{
+color:#ffd700;
+}
 
-<div class="hero">
-<div class="hero-content">
-<h1>ThaiRide Travel</h1>
-<p>บริการรับส่งสนามบินระดับพรีเมียม</p>
-</div>
-</div>
+/* HERO */
+.hero img{
+width:100%;
+height:450px;
+object-fit:cover;
+}
 
-<div class="container">
+/* CAR SECTION */
+.car-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:40px;
+}
 
-<a href="tel:0852242135" class="btn red">📞 โทร 085-224-2135</a>
+.car-grid img{
+width:100%;
+border-radius:12px;
+height:220px;
+object-fit:cover;
+}
 
-<a href="https://lin.ee/zmoafDZ" target="_blank" class="btn green">💬 จองผ่าน LINE</a>
+/* DESTINATION GRID */
+.grid-3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding:40px;
+}
 
-<a href="contact.html" class="btn blue">📍 จองตอนนี้</a>
+.grid-3 img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+transition:0.3s;
+}
 
-<a href="contact.html" class="btn dark">📄 ดูราคา</a>
+.grid-3 img:hover{
+transform:scale(1.05);
+}
 
-<a href="contact.html" class="btn dark">🚗 เลือกรถ</a>
+/* REVIEW MARQUEE */
+.reviews{
+background:#0d2d4a;
+overflow:hidden;
+white-space:nowrap;
+}
 
-<p>สแกน QR เพื่อจองผ่าน LINE</p>
-<img src="line-qr.png" width="120">
+.review-track{
+display:inline-block;
+padding:15px;
+color:white;
+animation:slide 20s linear infinite;
+font-weight:bold;
+}
 
-</div>
+@keyframes slide{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
 
-<footer>
-© 2026 ThaiRide Travel | รถเช่าพร้อมคนขับ กรุงเทพ
-</footer>
+/* SIDEBAR WIDGET */
+.widget{
+position:fixed;
+left:20px;
+top:150px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+width:220px;
+z-index:1000;
+}
 
-</body>
-</html>
+#clock{
+font-size:20px;
+font-weight:bold;
+margin-top:10px;
+animation:flip 1s infinite alternate;
+}
+
+@keyframes flip{
+from{transform:rotateX(0deg)}
+to{transform:rotateX(15deg)}
+}
+
+.plane-icon{
+width:100%;
+margin-top:15px;
+}
+
+/* FOOTER */
+footer{
+background:#0d2d4a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.btn-book{
+background:#00B900;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+/* FLOAT LINE */
+.line-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#00B900;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
