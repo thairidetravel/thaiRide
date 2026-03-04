@@ -1,27 +1,27 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f5f5f5;
+background:#f4f6f9;
 }
 
 /* HEADER */
 header{
+background:#0d2d4a;
+color:white;
+padding:15px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-background:#0d2d4a;
-color:white;
 }
 
-nav a{
+header nav a{
 color:white;
-margin-left:25px;
+margin-left:20px;
 text-decoration:none;
 font-weight:bold;
 }
 
-nav a:hover{
+header nav a:hover{
 color:#ffd700;
 }
 
@@ -35,24 +35,46 @@ object-fit:cover;
 /* CAR SECTION */
 .car-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(4,1fr);
 gap:20px;
 padding:40px;
 }
 
-.car{
+.car-box{
 background:white;
 padding:20px;
-border-radius:12px;
+border-radius:15px;
 text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.car img{
+.car-box img{
 width:100%;
 border-radius:12px;
 }
 
-/* REVIEW */
+/* TOUR GRID 12 */
+.tour-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:40px;
+}
+
+.tour-grid img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.tour-grid img:hover{
+transform:scale(1.05);
+}
+
+/* REVIEW MARQUEE */
 .reviews{
 background:#0d2d4a;
 color:white;
@@ -63,7 +85,7 @@ padding:15px;
 
 .review-track{
 display:inline-block;
-animation:slide 20s linear infinite;
+animation:slide 25s linear infinite;
 }
 
 @keyframes slide{
@@ -71,43 +93,67 @@ animation:slide 20s linear infinite;
 100%{transform:translateX(-100%);}
 }
 
-/* FLOAT BUTTON */
-.line-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#00B900;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
 /* FOOTER */
 footer{
 background:#0d2d4a;
 color:white;
 text-align:center;
-padding:30px 20px;
+padding:30px;
 }
 
-.footer-box{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:40px;
-margin-bottom:20px;
-flex-wrap:wrap;
+.footer-contact{
+margin-top:20px;
 }
 
-#clock{
-font-size:22px;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.footer-qr img{
+.footer-contact img{
+width:150px;
 border-radius:12px;
+}
+
+.book-btn{
+display:inline-block;
+background:#00B900;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* SIDEBAR WATCH */
+.sidebar{
+position:fixed;
+left:20px;
+bottom:20px;
+background:black;
+color:#00ff88;
+padding:20px;
+border-radius:25px;
+width:220px;
+font-family:monospace;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.sidebar div{
+margin-bottom:6px;
+font-size:14px;
+}
+
+/* FORM */
+form{
+max-width:600px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+form input, form select{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
 }
