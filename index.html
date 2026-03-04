@@ -3,100 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thai Ride Travel</title>
 
-<title>ThaiRide Travel | Airport Transfer Thailand</title>
-
-<meta name="description" content="Premium Airport Transfer & Private Tour Thailand. Book via LINE OA.">
-<meta name="keywords" content="airport transfer thailand, bangkok taxi, van rental">
-<meta name="author" content="ThaiRide Travel">
-
-<meta property="og:title" content="ThaiRide Travel">
-<meta property="og:image" content="assets/hero_01.jpg">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
+<!-- SEO -->
+<meta name="description" content="บริการรถรับส่งสนามบิน และท่องเที่ยวทั่วไทย">
+<meta name="keywords" content="รถเช่า, รถรับส่งสนามบิน, เที่ยวไทย, Thai Ride Travel">
+<meta name="author" content="Thai Ride Travel">
+<meta name="google-site-verification" content="G-V9XCVN1N0W">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="logo">
-<img src="assets/logo.png" alt="ThaiRide Logo">
-</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="destinations.html">Destinations</a>
-<a href="contact.html">Contact</a>
-</nav>
+    <h1>Thai Ride Travel</h1>
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="contact.html">ติดต่อเรา</a>
+    </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<img src="assets/hero_01.jpg">
+    <img src="hero_01.png" alt="บริการรถรับส่ง">
 </section>
 
+<!-- CAR SECTION -->
 <section class="car-grid">
-<img src="assets/car-altis.jpg">
-<img src="assets/car-camry.jpg">
-<img src="assets/car-suv.jpg">
-<img src="assets/car-van.jpg">
+    <div class="car">
+        <img src="hero_01.png" alt="">
+        <h3>Airport Transfer</h3>
+        <p>บริการรับส่งสนามบิน 24 ชั่วโมง</p>
+    </div>
+
+    <div class="car">
+        <img src="hero_02.png" alt="">
+        <h3>Private Tour</h3>
+        <p>บริการรถพาเที่ยวทั่วไทย</p>
+    </div>
 </section>
 
-<section class="grid-3">
-<a href="destination-detail.html"><img src="assets/place1.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place2.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place3.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place4.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place5.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place6.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place7.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place8.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place9.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place10.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place11.jpg"></a>
-<a href="destination-detail.html"><img src="assets/place12.jpg"></a>
-</section>
-
+<!-- REVIEW -->
 <section class="reviews">
-<div class="review-track">
-⭐ Excellent Service | ⭐ On Time | ⭐ Clean Car | ⭐ Friendly Driver | ⭐ Highly Recommended
-</div>
+    <div class="review-track">
+        ⭐⭐⭐⭐⭐ บริการดีมาก ตรงเวลา
+        ⭐⭐⭐⭐⭐ รถสะอาด คนขับสุภาพ
+        ⭐⭐⭐⭐⭐ ใช้บริการอีกแน่นอน
+    </div>
 </section>
 
+<!-- SIDEBAR WIDGET -->
 <div class="widget">
-<input type="date">
-<input type="time">
-<div id="clock"></div>
-<img src="assets/plane.png" class="plane-icon">
+    <div id="clock"></div>
+    <img src="line-qr.png" width="150">
 </div>
 
-<footer>
-<h3>Contact & Booking</h3>
-<a href="https://lin.ee/LILWeJS" target="_blank">
-<img src="assets/line-oa-qr.png" width="180">
-</a>
-<br><br>
-<a href="contact.html" class="btn-book">Book Now</a>
-</footer>
+<!-- FLOAT BUTTON -->
+<a href="contact.html" class="line-float">จองรถ</a>
 
-<a href="https://lin.ee/LILWeJS" class="line-float" target="_blank">Chat LINE</a>
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Thai Ride Travel</p>
+</footer>
 
 <script>
 function updateClock(){
-let now = new Date();
-document.getElementById("clock").innerHTML = now.toLocaleTimeString();
+    const now = new Date();
+    document.getElementById("clock").innerHTML =
+        now.toLocaleTimeString();
 }
 setInterval(updateClock,1000);
-
-const userLang = navigator.language;
-document.documentElement.lang = userLang.startsWith('th') ? 'th' : 'en';
+updateClock();
 </script>
 
 </body>
