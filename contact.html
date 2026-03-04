@@ -6,24 +6,125 @@
 <title>ติดต่อจองรถ | ThaiRide Travel</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#000;color:#fff;text-align:center;}
-.form-section{padding:40px 20px;}
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#000;
+color:#fff;
+}
+
+/* ===== HEADER HERO ===== */
+.hero{
+background:url('hero_02.png') center/cover no-repeat;
+height:420px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+text-align:center;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+}
+
+.hero h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.9;
+}
+
+/* ===== FORM SECTION ===== */
+.form-section{
+padding:50px 20px;
+background:#111;
+}
+
+.form-box{
+background:#1a1a1a;
+padding:30px 20px;
+border-radius:15px;
+max-width:500px;
+margin:auto;
+box-shadow:0 0 25px rgba(255,255,255,0.05);
+}
+
 input,select,textarea{
-width:90%;max-width:400px;padding:12px;margin:8px auto;
-border-radius:8px;border:none;display:block;}
-textarea{height:100px;}
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:8px;
+border:none;
+font-size:15px;
+}
+
+textarea{
+height:100px;
+resize:none;
+}
+
 button{
-width:90%;max-width:400px;padding:14px;margin-top:15px;
-border:none;border-radius:30px;background:#ffcc00;font-weight:bold;}
-a{color:#00ff88;text-decoration:none;}
+width:100%;
+padding:15px;
+margin-top:15px;
+border:none;
+border-radius:30px;
+background:#ffcc00;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ffaa00;
+}
+
+.back-link{
+display:block;
+text-align:center;
+margin-top:25px;
+color:#00ff88;
+text-decoration:none;
+}
+
+footer{
+padding:20px;
+text-align:center;
+background:#000;
+opacity:0.7;
+font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
+<!-- ===== HERO SECTION ===== -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>ติดต่อจองรถ</h1>
+    <p>กรอกข้อมูลเพื่อจองรถรับส่งสนามบินกับ ThaiRide Travel</p>
+  </div>
+</div>
+
+<!-- ===== FORM SECTION ===== -->
 <div class="form-section">
 
-<h2>ติดต่อจองรถ</h2>
+<div class="form-box">
 
 <form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
 
@@ -63,10 +164,14 @@ a{color:#00ff88;text-decoration:none;}
 
 </form>
 
-<br>
-<a href="index.html">← กลับหน้าหลัก</a>
+<a href="index.html" class="back-link">← กลับหน้าหลัก</a>
 
 </div>
+</div>
+
+<footer>
+© 2026 ThaiRide Travel | Premium Airport Transfer Bangkok
+</footer>
 
 </body>
 </html>
