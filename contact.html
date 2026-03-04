@@ -3,27 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ติดต่อเรา - Thai Ride Travel</title>
+
+<title>ติดต่อจองรถ | Thai Ride Travel</title>
+
+<meta name="description" content="จองรถ VIP Airport Transfer และ Private Tour ผ่าน LINE Official Account ได้ทันที">
+<meta name="keywords" content="จองรถ, รถรับส่งสนามบิน, Private Tour Thailand">
+<meta name="author" content="Thai Ride Travel">
+<meta name="google-site-verification" content="G-V9XCVN1N0W">
+
 <link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <h1>ติดต่อเรา</h1>
-    <nav>
-        <a href="index.html">หน้าแรก</a>
-    </nav>
+<h2>Thai Ride Travel</h2>
+<nav>
+<a href="index.html">หน้าแรก</a>
+<a href="tour.html">สถานที่ท่องเที่ยว</a>
+<a href="contact.html">ติดต่อเรา</a>
+</nav>
 </header>
 
-<section style="padding:40px; text-align:center;">
-    <h2>จองรถผ่าน LINE</h2>
-    <img src="line-qr.png" width="250">
-    <p><a href="https://lin.ee/LILWeJS" class="btn-book">Add LINE</a></p>
+<!-- HERO (รูปที่คุณให้ไว้) -->
+<section class="hero">
+<img src="contact-header.png" alt="Contact Thai Ride Travel">
 </section>
 
+<section style="padding:40px;text-align:center;">
+
+<h2>ติดต่อจองรถ</h2>
+<p style="font-size:18px;margin-bottom:20px;">
+งานด่วน กรุณาทัก LINE Official Account เท่านั้น
+</p>
+
+<!-- QR CODE -->
+<div style="margin-bottom:30px;">
+<img src="line-qr.png" alt="LINE QR" style="width:220px;border-radius:15px;">
+<br><br>
+<a href="https://lin.ee/zmoafDZ" class="book-btn">ทัก LINE เพื่อจองรถ</a>
+</div>
+
+<!-- FORM -->
+<form style="max-width:600px;margin:0 auto;text-align:left;">
+
+<label>ชื่อผู้จอง</label>
+<input type="text" required>
+
+<label>วันที่เดินทาง</label>
+<input type="date" required>
+
+<label>จุดรับ</label>
+<input type="text" required>
+
+<label>จุดส่ง</label>
+<input type="text" required>
+
+<label>ประเภทรถ</label>
+<select required>
+<option>Alphard</option>
+<option>Camry</option>
+<option>SUV</option>
+<option>Van</option>
+</select>
+
+<label>จำนวนผู้โดยสาร</label>
+<input type="number" min="1" required>
+
+<label>หมายเหตุเพิ่มเติม</label>
+<textarea rows="4"></textarea>
+
+<button type="submit" class="book-btn" style="width:100%;margin-top:20px;">
+ส่งข้อมูล (จากนั้นทัก LINE)
+</button>
+
+</form>
+
+</section>
+
+<!-- SIDEBAR WATCH -->
+<div class="sidebar">
+<div id="date"></div>
+<div id="time"></div>
+<div id="visits"></div>
+<div id="country"></div>
+<div id="calendar"></div>
+<div style="text-align:center;margin-top:10px;">✈️</div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-    <p>© 2025 Thai Ride Travel</p>
+<p>© 2025 Thai Ride Travel</p>
 </footer>
 
 </body>
