@@ -14,7 +14,7 @@ body{
     text-align:center;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
     background:url('hero_01.png') center/cover no-repeat;
     height:280px;
@@ -23,34 +23,29 @@ body{
     justify-content:center;
     position:relative;
 }
-
 .hero::after{
     content:"";
     position:absolute;
     inset:0;
     background:rgba(0,0,0,0.5);
 }
-
 .hero-content{
     position:relative;
     z-index:2;
 }
-
 .hero h1{
     font-size:28px;
     margin:0;
 }
-
 .hero p{
     margin:5px 0 0 0;
     opacity:0.9;
 }
 
-/* BUTTON SECTION */
+/* BUTTONS */
 .container{
     padding:30px 20px;
 }
-
 .btn{
     display:block;
     width:90%;
@@ -62,7 +57,6 @@ body{
     font-weight:bold;
     color:#fff;
 }
-
 .red{background:#ff2d2d;}
 .green{background:#00cc44;}
 .blue{background:#2d6cff;}
@@ -76,8 +70,7 @@ body{
     background:#111;
     padding:40px 20px;
 }
-
-input, select{
+input, select, textarea{
     width:90%;
     max-width:400px;
     padding:12px;
@@ -86,7 +79,19 @@ input, select{
     border:none;
     display:block;
 }
-
+textarea{
+    resize:none;
+    height:100px;
+}
+label{
+    display:block;
+    width:90%;
+    max-width:400px;
+    margin:10px auto 0;
+    text-align:left;
+    font-size:14px;
+    opacity:0.8;
+}
 button{
     width:90%;
     max-width:400px;
@@ -117,7 +122,7 @@ footer{
     </div>
 </div>
 
-<!-- MENU BUTTONS -->
+<!-- MENU -->
 <div class="container">
 
     <a href="tel:0800000000" class="btn red">📞 โทรตอนนี้</a>
@@ -138,28 +143,47 @@ footer{
 <!-- BOOKING FORM -->
 <div class="form-section" id="booking">
 
-<h2>จองวันเวลา</h2>
+<h2>ฟอร์มจองรถ</h2>
 
 <form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
 
-<input type="text" name="name" placeholder="ชื่อของคุณ" required>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="มีรายการจองรถใหม่จากเว็บไซต์ ThaiRide Travel">
 
-<input type="tel" name="phone" placeholder="เบอร์โทร" required>
+<input type="text" name="ชื่อ" placeholder="ชื่อผู้จอง" required>
 
-<select name="route" required>
-<option value="">เลือกเส้นทาง</option>
-<option>สนามบิน → กรุงเทพ</option>
-<option>กรุงเทพ → สนามบิน</option>
+<input type="tel" name="เบอร์โทรติดต่อ" placeholder="เบอร์โทรติดต่อ" required>
+
+<label>วันที่รับ</label>
+<input type="date" name="วันที่รับ" required>
+
+<label>เวลารับ</label>
+<input type="time" name="เวลารับ" required>
+
+<input type="text" name="สถานที่รับ" placeholder="สถานที่รับ เช่น โรงแรม / คอนโด / หมู่บ้าน" required>
+
+<input type="text" name="รายละเอียดสถานที่รับ" placeholder="บ้านเลขที่ / เลขห้อง / อาคาร A หรือ B" required>
+
+<select name="สถานที่ไปส่ง" required>
+<option value="">เลือกสถานที่ไปส่ง</option>
+<option>สนามบินสุวรรณภูมิ</option>
+<option>สนามบินดอนเมือง</option>
 </select>
 
-<select name="car" required>
-<option value="">เลือกรถ</option>
-<option>Sedan</option>
-<option>SUV</option>
-<option>Van</option>
+<select name="ประเภทรถ" required>
+<option value="">เลือกประเภทรถ</option>
+<option>Sedan (4 ที่นั่ง)</option>
+<option>SUV (7 ที่นั่ง)</option>
+<option>Van (10 ที่นั่ง)</option>
 </select>
 
-<button type="submit">จองและชำระมัดจำ</button>
+<input type="number" name="จำนวนผู้โดยสาร" placeholder="จำนวนผู้โดยสาร" min="1" required>
+
+<input type="number" name="จำนวนกระเป๋า" placeholder="จำนวนกระเป๋า" min="0" required>
+
+<textarea name="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม"></textarea>
+
+<button type="submit">ยืนยันการจอง</button>
 
 </form>
 
