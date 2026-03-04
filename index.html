@@ -3,127 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thai Ride Travel</title>
+<title>ThaiRide Travel</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#000;
+    color:#fff;
+    text-align:center;
 }
 
-/* HERO */
-.hero {
-    position: relative;
-    height: 450px;
-    background: url('hero_01.png') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+.container{
+    padding:40px 20px;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
+h1{
+    color:#00ff88;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.subtitle{
+    margin-bottom:30px;
+    opacity:0.8;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+/* BUTTON STYLE */
+.btn{
+    display:block;
+    width:90%;
+    max-width:400px;
+    margin:12px auto;
+    padding:15px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#fff;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.red{background:#ff2d2d;}
+.green{background:#00cc44;}
+.blue{background:#2d6cff;}
+.dark{
+    background:#111;
+    border:1px solid #00ff88;
 }
 
-.hero-buttons a {
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 8px;
-    border-radius: 6px;
-    font-weight: bold;
-    color: white;
+/* FORM SECTION */
+.form-section{
+    background:#111;
+    padding:40px 20px;
+    margin-top:40px;
 }
 
-.btn-green { background: #28a745; }
-.btn-blue { background: #007bff; }
-
-/* CONTACT FORM */
-.contact {
-    padding: 60px 20px;
-    text-align: center;
-    background: #f4f4f4;
+input, select{
+    width:90%;
+    max-width:400px;
+    padding:12px;
+    margin:8px auto;
+    border-radius:8px;
+    border:none;
+    display:block;
 }
 
-.contact h2 {
-    margin-bottom: 30px;
+button{
+    width:90%;
+    max-width:400px;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius:30px;
+    background:#ffcc00;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-form {
-    max-width: 500px;
-    margin: auto;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-button {
-    padding: 12px 25px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.9;
+footer{
+    padding:20px;
+    background:#000;
+    font-size:14px;
+    opacity:0.7;
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-    <div class="hero-content">
-        <h1>Safari World Bangkok</h1>
-        <p>Wild Adventure Awaits</p>
-        <div class="hero-buttons">
-            <a href="#" class="btn-green">View Attractions</a>
-            <a href="#" class="btn-blue">Show Schedule</a>
-        </div>
-    </div>
-</header>
+<div class="container">
+    <h1>ThaiRide</h1>
+    <div class="subtitle">บริการรับส่งสนามบินระดับพรีเมียม</div>
 
-<section class="contact">
-    <h2>Contact / Booking</h2>
+    <a href="tel:0800000000" class="btn red">📞 โทรตอนนี้</a>
+    <a href="#" class="btn green">💬 จองผ่าน LINE</a>
+    <a href="#booking" class="btn blue">📍 นำทางไปสนามบิน</a>
+    <a href="#booking" class="btn dark">📄 ดูราคา</a>
+    <a href="#booking" class="btn dark">🚗 เลือกรถ</a>
+</div>
+
+<div class="form-section" id="booking">
+    <h2>จองวันเวลา</h2>
 
     <form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
 
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" name="name" placeholder="ชื่อของคุณ" required>
+        <input type="tel" name="phone" placeholder="เบอร์โทร" required>
 
-        <button type="submit">Send Message</button>
+        <select name="route" required>
+            <option value="">เลือกเส้นทาง</option>
+            <option>สนามบิน → กรุงเทพ</option>
+            <option>กรุงเทพ → สนามบิน</option>
+        </select>
+
+        <select name="car" required>
+            <option value="">เลือกรถ</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Van</option>
+        </select>
+
+        <button type="submit">จองและชำระมัดจำ</button>
 
     </form>
-</section>
+</div>
+
+<footer>
+© 2026 ThaiRide Travel | รถเช่าพร้อมคนขับ กรุงเทพ
+</footer>
 
 </body>
 </html>
