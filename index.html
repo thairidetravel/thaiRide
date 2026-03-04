@@ -3,189 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ThaiRide Travel</title>
+<title>ThaiRide Travel | รถรับส่งสนามบิน กรุงเทพ</title>
+
+<!-- SEO -->
+<meta name="description" content="บริการรถรับส่งสนามบินสุวรรณภูมิ และดอนเมือง พร้อมคนขับมืออาชีพ จองง่ายผ่าน LINE">
+<meta name="keywords" content="รถรับส่งสนามบิน, สุวรรณภูมิ, ดอนเมือง, รถเช่าพร้อมคนขับ, กรุงเทพ">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V9XCVN1N0W');
+</script>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#000;
-    color:#fff;
-    text-align:center;
-}
-
-/* HERO */
+body{margin:0;font-family:Arial;background:#000;color:#fff;text-align:center;}
 .hero{
-    background:url('hero_01.png') center/cover no-repeat;
-    height:280px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-}
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.5);
-}
-.hero-content{
-    position:relative;
-    z-index:2;
-}
-.hero h1{
-    font-size:28px;
-    margin:0;
-}
-.hero p{
-    margin:5px 0 0 0;
-    opacity:0.9;
-}
-
-/* BUTTONS */
-.container{
-    padding:30px 20px;
-}
-.btn{
-    display:block;
-    width:90%;
-    max-width:400px;
-    margin:12px auto;
-    padding:15px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    color:#fff;
-}
+background:url('hero_01.png') center/cover no-repeat;
+height:280px;display:flex;align-items:center;justify-content:center;position:relative;}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.5);}
+.hero-content{position:relative;z-index:2;}
+.container{padding:30px 20px;}
+.btn{display:block;width:90%;max-width:400px;margin:12px auto;padding:15px;border-radius:30px;text-decoration:none;font-weight:bold;color:#fff;}
 .red{background:#ff2d2d;}
 .green{background:#00cc44;}
 .blue{background:#2d6cff;}
-.dark{
-    background:#111;
-    border:1px solid #00ff88;
-}
-
-/* FORM */
-.form-section{
-    background:#111;
-    padding:40px 20px;
-}
-input, select, textarea{
-    width:90%;
-    max-width:400px;
-    padding:12px;
-    margin:8px auto;
-    border-radius:8px;
-    border:none;
-    display:block;
-}
-textarea{
-    resize:none;
-    height:100px;
-}
-label{
-    display:block;
-    width:90%;
-    max-width:400px;
-    margin:10px auto 0;
-    text-align:left;
-    font-size:14px;
-    opacity:0.8;
-}
-button{
-    width:90%;
-    max-width:400px;
-    padding:14px;
-    margin-top:15px;
-    border:none;
-    border-radius:30px;
-    background:#ffcc00;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-footer{
-    padding:20px;
-    font-size:14px;
-    opacity:0.7;
-}
+.dark{background:#111;border:1px solid #00ff88;}
+footer{padding:20px;font-size:14px;opacity:0.7;}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
-    <div class="hero-content">
-        <h1>ThaiRide Travel</h1>
-        <p>บริการรับส่งสนามบินระดับพรีเมียม</p>
-    </div>
+<div class="hero-content">
+<h1>ThaiRide Travel</h1>
+<p>บริการรับส่งสนามบินระดับพรีเมียม</p>
+</div>
 </div>
 
-<!-- MENU -->
 <div class="container">
 
-    <a href="tel:0800000000" class="btn red">📞 โทรตอนนี้</a>
+<a href="tel:0852242135" class="btn red">📞 โทร 085-224-2135</a>
 
-    <a href="https://line.me/" class="btn green">💬 จองผ่าน LINE</a>
+<a href="https://lin.ee/zmoafDZ" target="_blank" class="btn green">💬 จองผ่าน LINE</a>
 
-    <a href="#booking" class="btn blue">📍 จองรถตอนนี้</a>
+<a href="contact.html" class="btn blue">📍 จองตอนนี้</a>
 
-    <a href="#booking" class="btn dark">📄 ดูราคา</a>
+<a href="contact.html" class="btn dark">📄 ดูราคา</a>
 
-    <a href="#booking" class="btn dark">🚗 เลือกรถ</a>
+<a href="contact.html" class="btn dark">🚗 เลือกรถ</a>
 
-    <p>สแกน QR เพื่อจองผ่าน LINE</p>
-    <img src="line-qr.png" width="120">
-
-</div>
-
-<!-- BOOKING FORM -->
-<div class="form-section" id="booking">
-
-<h2>ฟอร์มจองรถ</h2>
-
-<form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
-
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="มีรายการจองรถใหม่จากเว็บไซต์ ThaiRide Travel">
-
-<input type="text" name="ชื่อ" placeholder="ชื่อผู้จอง" required>
-
-<input type="tel" name="เบอร์โทรติดต่อ" placeholder="เบอร์โทรติดต่อ" required>
-
-<label>วันที่รับ</label>
-<input type="date" name="วันที่รับ" required>
-
-<label>เวลารับ</label>
-<input type="time" name="เวลารับ" required>
-
-<input type="text" name="สถานที่รับ" placeholder="สถานที่รับ เช่น โรงแรม / คอนโด / หมู่บ้าน" required>
-
-<input type="text" name="รายละเอียดสถานที่รับ" placeholder="บ้านเลขที่ / เลขห้อง / อาคาร A หรือ B" required>
-
-<select name="สถานที่ไปส่ง" required>
-<option value="">เลือกสถานที่ไปส่ง</option>
-<option>สนามบินสุวรรณภูมิ</option>
-<option>สนามบินดอนเมือง</option>
-</select>
-
-<select name="ประเภทรถ" required>
-<option value="">เลือกประเภทรถ</option>
-<option>Sedan (4 ที่นั่ง)</option>
-<option>SUV (7 ที่นั่ง)</option>
-<option>Van (10 ที่นั่ง)</option>
-</select>
-
-<input type="number" name="จำนวนผู้โดยสาร" placeholder="จำนวนผู้โดยสาร" min="1" required>
-
-<input type="number" name="จำนวนกระเป๋า" placeholder="จำนวนกระเป๋า" min="0" required>
-
-<textarea name="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม"></textarea>
-
-<button type="submit">ยืนยันการจอง</button>
-
-</form>
+<p>สแกน QR เพื่อจองผ่าน LINE</p>
+<img src="line-qr.png" width="120">
 
 </div>
 
