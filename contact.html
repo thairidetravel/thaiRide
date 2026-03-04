@@ -3,174 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ติดต่อจองรถ | ThaiRide Travel</title>
-
-<style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#000;
-color:#fff;
-}
-
-/* ===== HEADER HERO ===== */
-.hero{
-background:url('hero_02.png') center/cover no-repeat;
-height:420px;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-text-align:center;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-padding:20px;
-}
-
-.hero h1{
-font-size:38px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-opacity:0.9;
-}
-
-/* ===== FORM SECTION ===== */
-.form-section{
-padding:50px 20px;
-background:#111;
-}
-
-.form-box{
-background:#1a1a1a;
-padding:30px 20px;
-border-radius:15px;
-max-width:500px;
-margin:auto;
-box-shadow:0 0 25px rgba(255,255,255,0.05);
-}
-
-input,select,textarea{
-width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:8px;
-border:none;
-font-size:15px;
-}
-
-textarea{
-height:100px;
-resize:none;
-}
-
-button{
-width:100%;
-padding:15px;
-margin-top:15px;
-border:none;
-border-radius:30px;
-background:#ffcc00;
-font-weight:bold;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#ffaa00;
-}
-
-.back-link{
-display:block;
-text-align:center;
-margin-top:25px;
-color:#00ff88;
-text-decoration:none;
-}
-
-footer{
-padding:20px;
-text-align:center;
-background:#000;
-opacity:0.7;
-font-size:14px;
-}
-</style>
+<title>ติดต่อเรา - Thai Ride Travel</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ===== HERO SECTION ===== -->
-<div class="hero">
-  <div class="hero-content">
-    <h1>ติดต่อจองรถ</h1>
-    <p>กรอกข้อมูลเพื่อจองรถรับส่งสนามบินกับ ThaiRide Travel</p>
-  </div>
-</div>
+<header>
+    <h1>ติดต่อเรา</h1>
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+    </nav>
+</header>
 
-<!-- ===== FORM SECTION ===== -->
-<div class="form-section">
-
-<div class="form-box">
-
-<form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
-
-<input type="hidden" name="_captcha" value="false">
-
-<input type="text" name="ชื่อ" placeholder="ชื่อผู้จอง" required>
-<input type="tel" name="เบอร์โทร" placeholder="เบอร์โทรติดต่อ" required>
-
-<label>วันที่รับ</label>
-<input type="date" name="วันที่รับ" required>
-
-<label>เวลารับ</label>
-<input type="time" name="เวลารับ" required>
-
-<input type="text" name="สถานที่รับ" placeholder="โรงแรม / คอนโด / หมู่บ้าน" required>
-<input type="text" name="รายละเอียดสถานที่รับ" placeholder="บ้านเลขที่ / ห้อง / อาคาร A หรือ B" required>
-
-<select name="สถานที่ไปส่ง" required>
-<option value="">เลือกสนามบินปลายทาง</option>
-<option>สนามบินสุวรรณภูมิ</option>
-<option>สนามบินดอนเมือง</option>
-</select>
-
-<select name="ประเภทรถ" required>
-<option value="">เลือกประเภทรถ</option>
-<option>Sedan</option>
-<option>SUV</option>
-<option>Van</option>
-</select>
-
-<input type="number" name="จำนวนผู้โดยสาร" placeholder="จำนวนผู้โดยสาร" required>
-<input type="number" name="จำนวนกระเป๋า" placeholder="จำนวนกระเป๋า" required>
-
-<textarea name="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม"></textarea>
-
-<button type="submit">ยืนยันการจอง</button>
-
-</form>
-
-<a href="index.html" class="back-link">← กลับหน้าหลัก</a>
-
-</div>
-</div>
+<section style="padding:40px; text-align:center;">
+    <h2>จองรถผ่าน LINE</h2>
+    <img src="line-qr.png" width="250">
+    <p><a href="https://lin.ee/LILWeJS" class="btn-book">Add LINE</a></p>
+</section>
 
 <footer>
-© 2026 ThaiRide Travel | Premium Airport Transfer Bangkok
+    <p>© 2025 Thai Ride Travel</p>
 </footer>
 
 </body>
