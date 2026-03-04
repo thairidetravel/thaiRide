@@ -21,7 +21,7 @@ background:#f4f6f9;
 color:#333;
 }
 
-/* NAV บางเรียบ */
+/* NAV */
 nav{
 background:#0d1b2a;
 color:white;
@@ -38,7 +38,7 @@ text-decoration:none;
 margin-left:15px;
 }
 
-/* HERO ขยับขึ้นอีก */
+/* HERO */
 .hero{
 min-height:65vh;
 background:linear-gradient(135deg,#0d1b2a,#1b263b);
@@ -48,7 +48,7 @@ justify-content:flex-start;
 align-items:center;
 text-align:center;
 color:white;
-padding-top:60px;   /* ลดช่องว่างด้านบน */
+padding-top:60px;
 padding-left:20px;
 padding-right:20px;
 padding-bottom:40px;
@@ -93,29 +93,33 @@ padding:20px;
 font-size:13px;
 }
 
-/* Floating Buttons */
-.line-btn{
+/* FIXED FLOATING BUTTONS */
+.line-btn,
+.whatsapp-btn{
 position:fixed;
-bottom:90px;
 right:20px;
-background:#00c300;
-color:white;
-padding:12px 14px;
+width:55px;
+height:55px;
 border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:12px;
+font-weight:bold;
 text-decoration:none;
-font-size:14px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+z-index:9999;
+}
+
+.line-btn{
+bottom:100px;   /* ปรับตำแหน่ง */
+background:#00c300;
 }
 
 .whatsapp-btn{
-position:fixed;
 bottom:30px;
-right:20px;
 background:#25d366;
-color:white;
-padding:12px 14px;
-border-radius:50%;
-text-decoration:none;
-font-size:14px;
 }
 </style>
 </head>
