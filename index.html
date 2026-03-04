@@ -1,125 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Airport Transfer Service</title>
+<title>ThaiRide - Airport Transfer</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#000;
+  color:white;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0f0f0f;
-  color: white;
+/* จัดให้อยู่กลางแนวตั้ง แต่ไม่ชิดล่างเกิน */
+.container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;   /* เปลี่ยนจาก center */
+  align-items:center;
+  padding-top:80px;             /* กำหนดระยะขอบบนใหม่ */
+  text-align:center;
 }
 
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75));
+h1{
+  font-size:40px;
+  margin-bottom:10px;
+  color:#00ff88;
 }
 
-.hero-content {
-  max-width: 500px;
-  width: 100%;
+.subtitle{
+  font-size:18px;
+  color:#aaa;
+  margin-bottom:30px;
 }
 
-.hero h1 {
-  font-size: 38px;
-  margin-bottom: 15px;
+.button{
+  display:inline-block;
+  margin:15px;
+  padding:18px 45px;
+  font-size:20px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
 }
 
-.hero p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #cccccc;
+.call{
+  background:#ff0000;
+  color:white;
 }
 
-.cta-btn {
-  display: inline-block;
-  background-color: #e60000;
-  color: #ffffff;
-  padding: 15px 40px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.3s ease;
+.call:hover{
+  background:#cc0000;
 }
 
-.cta-btn:hover {
-  background-color: #cc0000;
-  transform: scale(1.05);
+.qr-box{
+  margin-top:25px;
 }
 
-.qr-section {
-  margin-top: 40px;
+.qr-box p{
+  color:#aaa;
+  margin-bottom:15px;
 }
 
-.qr-section p {
-  margin-bottom: 15px;
-  font-size: 16px;
-  color: #dddddd;
+.qr-box img{
+  width:220px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.qr-section img {
-  width: 220px;
-  background: white;
-  padding: 12px;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .cta-btn {
-    font-size: 16px;
-    padding: 13px 30px;
-  }
-
-  .qr-section img {
-    width: 180px;
-  }
+.qr-box img:hover{
+  transform:scale(1.05);
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="hero-content">
+<div class="container">
 
-    <h1>Airport Transfer Service</h1>
-    <p>Private VIP Transportation</p>
+  <h1>ThaiRide</h1>
+  <div class="subtitle">Airport Transfer Service</div>
 
-    <!-- 🔴 ปุ่มแดง -->
-    <a href="https://lin.ee/MqSk0kZy" target="_blank" class="cta-btn">
-      CALL TAXI NOW
+  <a href="https://lin.ee/MqSk0kZy" target="_blank" class="button call">
+    CALL TAXI NOW
+  </a>
+
+  <div class="qr-box">
+    <p>Scan or Tap QR to Book via LINE</p>
+    <a href="https://lin.ee/MqSk0kZy" target="_blank">
+      <img src="qr-line.png" alt="LINE QR">
     </a>
-
-    <div class="qr-section">
-      <p>Scan or Tap QR to Book via LINE</p>
-
-      <!-- 🟢 QR กดได้ -->
-      <a href="https://lin.ee/MqSk0kZy" target="_blank">
-        <img src="line-qr.png" alt="LINE QR Code">
-      </a>
-    </div>
-
   </div>
-</section>
+
+</div>
 
 </body>
 </html>
