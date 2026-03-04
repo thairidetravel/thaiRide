@@ -1,153 +1,103 @@
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f5f5f5;
-}
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#0d2d4a;
-color:white;
-}
+<title>ThaiRide Travel | Airport Transfer Thailand</title>
 
-.logo img{
-height:70px;
-}
+<meta name="description" content="Premium Airport Transfer & Private Tour Thailand. Book via LINE OA.">
+<meta name="keywords" content="airport transfer thailand, bangkok taxi, van rental">
+<meta name="author" content="ThaiRide Travel">
 
-nav a{
-color:white;
-margin-left:25px;
-text-decoration:none;
-font-weight:bold;
-}
+<meta property="og:title" content="ThaiRide Travel">
+<meta property="og:image" content="assets/hero_01.jpg">
 
-nav a:hover{
-color:#ffd700;
-}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V9XCVN1N0W');
+</script>
 
-/* HERO */
-.hero img{
-width:100%;
-height:450px;
-object-fit:cover;
-}
+<link rel="stylesheet" href="style.css">
+</head>
 
-/* CAR SECTION */
-.car-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-padding:40px;
-}
+<body>
 
-.car-grid img{
-width:100%;
-border-radius:12px;
-height:220px;
-object-fit:cover;
-}
+<header>
+<div class="logo">
+<img src="assets/logo.png" alt="ThaiRide Logo">
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="destinations.html">Destinations</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
 
-/* DESTINATION GRID */
-.grid-3{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-padding:40px;
-}
+<section class="hero">
+<img src="assets/hero_01.jpg">
+</section>
 
-.grid-3 img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:12px;
-transition:0.3s;
-}
+<section class="car-grid">
+<img src="assets/car-altis.jpg">
+<img src="assets/car-camry.jpg">
+<img src="assets/car-suv.jpg">
+<img src="assets/car-van.jpg">
+</section>
 
-.grid-3 img:hover{
-transform:scale(1.05);
-}
+<section class="grid-3">
+<a href="destination-detail.html"><img src="assets/place1.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place2.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place3.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place4.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place5.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place6.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place7.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place8.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place9.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place10.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place11.jpg"></a>
+<a href="destination-detail.html"><img src="assets/place12.jpg"></a>
+</section>
 
-/* REVIEW MARQUEE */
-.reviews{
-background:#0d2d4a;
-overflow:hidden;
-white-space:nowrap;
-}
+<section class="reviews">
+<div class="review-track">
+⭐ Excellent Service | ⭐ On Time | ⭐ Clean Car | ⭐ Friendly Driver | ⭐ Highly Recommended
+</div>
+</section>
 
-.review-track{
-display:inline-block;
-padding:15px;
-color:white;
-animation:slide 20s linear infinite;
-font-weight:bold;
-}
+<div class="widget">
+<input type="date">
+<input type="time">
+<div id="clock"></div>
+<img src="assets/plane.png" class="plane-icon">
+</div>
 
-@keyframes slide{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
-}
+<footer>
+<h3>Contact & Booking</h3>
+<a href="https://lin.ee/LILWeJS" target="_blank">
+<img src="assets/line-oa-qr.png" width="180">
+</a>
+<br><br>
+<a href="contact.html" class="btn-book">Book Now</a>
+</footer>
 
-/* SIDEBAR WIDGET */
-.widget{
-position:fixed;
-left:20px;
-top:150px;
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-width:220px;
-z-index:1000;
-}
+<a href="https://lin.ee/LILWeJS" class="line-float" target="_blank">Chat LINE</a>
 
-#clock{
-font-size:20px;
-font-weight:bold;
-margin-top:10px;
-animation:flip 1s infinite alternate;
+<script>
+function updateClock(){
+let now = new Date();
+document.getElementById("clock").innerHTML = now.toLocaleTimeString();
 }
+setInterval(updateClock,1000);
 
-@keyframes flip{
-from{transform:rotateX(0deg)}
-to{transform:rotateX(15deg)}
-}
+const userLang = navigator.language;
+document.documentElement.lang = userLang.startsWith('th') ? 'th' : 'en';
+</script>
 
-.plane-icon{
-width:100%;
-margin-top:15px;
-}
-
-/* FOOTER */
-footer{
-background:#0d2d4a;
-color:white;
-text-align:center;
-padding:40px;
-}
-
-.btn-book{
-background:#00B900;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-}
-
-/* FLOAT LINE */
-.line-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#00B900;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
+</body>
+</html>
