@@ -1,119 +1,50 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ติดต่อจองรถ | ThaiRide Travel</title>
-
-<style>
-
-body{
-font-family: Arial;
-margin:0;
-background:#f2f2f2;
-}
-
-header{
-background:#0d6efd;
-color:white;
-text-align:center;
-padding:25px;
-}
-
-.container{
-max-width:700px;
-margin:auto;
-padding:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-label{
-display:block;
-margin-top:15px;
-}
-
-input,select,textarea{
-width:100%;
-padding:12px;
-margin-top:5px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-button{
-width:100%;
-padding:16px;
-background:#06C755;
-color:white;
-border:none;
-border-radius:8px;
-font-size:18px;
-margin-top:20px;
-cursor:pointer;
-}
-
-button:hover{
-background:#05a94f;
-}
-
-.line-btn{
-display:block;
-text-align:center;
-margin-top:20px;
-padding:16px;
-background:#06C755;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-size:18px;
-}
-
-footer{
-text-align:center;
-padding:20px;
-color:#777;
-}
-
-</style>
+<title>Contact | ThaiRide Travel</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h2>ThaiRide Travel</h2>
-<p>จองรถ Airport Transfer และ Private Tour</p>
-</header>
+<div class="hero">
+<img src="contact-header.png">
+</div>
+
+<div class="navbar">
+<div class="nav-container">
+
+<div class="logo">
+ThaiRide Travel
+</div>
+
+<div class="menu">
+<a href="index.html">หน้าแรก</a>
+<a href="tour.html">สถานที่ท่องเที่ยว</a>
+<a href="contact.html">ติดต่อจองรถ</a>
+</div>
+
+</div>
+</div>
 
 <div class="container">
 
-<div class="card">
+<h2>จองรถ</h2>
 
 <form id="bookingForm">
 
-<label>ชื่อผู้จอง</label>
-<input type="text" id="name" required>
+<input type="text" id="name" placeholder="ชื่อผู้จอง" required>
 
-<label>วันที่เดินทาง</label>
 <input type="date" id="date" required>
 
-<label>เวลาเดินทาง</label>
 <input type="time" id="time" required>
 
-<label>จุดรับ</label>
-<input type="text" id="pickup" required>
+<input type="text" id="pickup" placeholder="จุดรับ">
 
-<label>จุดส่ง</label>
-<input type="text" id="drop" required>
+<input type="text" id="drop" placeholder="จุดส่ง">
 
-<label>ประเภทรถ</label>
 <select id="car">
 <option>Alphard</option>
 <option>Camry</option>
@@ -121,11 +52,9 @@ color:#777;
 <option>Van</option>
 </select>
 
-<label>จำนวนผู้โดยสาร</label>
-<input type="number" id="people" min="1">
+<input type="number" id="people" placeholder="จำนวนผู้โดยสาร">
 
-<label>หมายเหตุเพิ่มเติม</label>
-<textarea id="note"></textarea>
+<textarea id="note" placeholder="หมายเหตุ"></textarea>
 
 <button type="submit">
 ส่งข้อมูลไป LINE
@@ -133,23 +62,16 @@ color:#777;
 
 </form>
 
-<a class="line-btn"
-href="https://line.me/ti/p/@775hjmvl"
-target="_blank">
-แชท LINE ThaiRide
-</a>
-
-</div>
-
 </div>
 
 <footer>
-© 2025 ThaiRide Travel
+© ThaiRide Travel
 </footer>
 
 <script>
 
-document.getElementById("bookingForm").addEventListener("submit",function(e){
+document.getElementById("bookingForm")
+.addEventListener("submit",function(e){
 
 e.preventDefault();
 
@@ -162,7 +84,7 @@ var car=document.getElementById("car").value;
 var people=document.getElementById("people").value;
 var note=document.getElementById("note").value;
 
-var message =
+var msg=
 "จองรถ ThaiRide Travel%0A"+
 "ชื่อ : "+name+"%0A"+
 "วันที่ : "+date+"%0A"+
@@ -170,12 +92,12 @@ var message =
 "รับจาก : "+pickup+"%0A"+
 "ส่งที่ : "+drop+"%0A"+
 "รถ : "+car+"%0A"+
-"ผู้โดยสาร : "+people+" คน%0A"+
+"ผู้โดยสาร : "+people+"%0A"+
 "หมายเหตุ : "+note;
 
-var url="https://line.me/R/msg/text/?"+message;
-
-window.open(url);
+window.open(
+"https://line.me/R/msg/text/?"+msg
+);
 
 });
 
