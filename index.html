@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<html lang="th">
+<html>
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>ThaiRide Travel</title>
-
 <link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
-
 </head>
 
-<body>
+<body onload="updateTime()">
 
-<section class="hero">
-<img src="hero-home.jpg">
-</section>
+<div class="hero">
+ThaiRide Travel
+</div>
 
-<div class="topbar">
+<div class="navbar">
 
-<div class="logo">ThaiRide Travel</div>
+<div><b>ThaiRide Travel</b></div>
 
-<nav>
+<div class="menu">
 <a href="index.html">หน้าแรก</a>
-<a href="tour.html">สถานที่ท่องเที่ยว</a>
-<a href="contact.html">จองรถ</a>
-</nav>
+<a href="travel.html">สถานที่ท่องเที่ยว</a>
+<a href="contact.html">ติดต่อ</a>
+</div>
 
 </div>
 
@@ -35,27 +29,24 @@
 <h2>บริการรถ VIP กรุงเทพ</h2>
 
 <p>
-บริการรถรับส่งสนามบิน Private Tour พร้อมคนขับมืออาชีพ
+บริการรถรับส่งสนามบิน และ Private Tour
 </p>
 
-<a href="contact.html">
-<button>จองรถผ่าน LINE</button>
+<a class="line-btn" href="https://line.me/ti/p/@775hjmvl">
+จองรถผ่าน LINE
 </a>
-
-</div>
-
-<div class="sidebar">
-
-<div id="date"></div>
-<div id="time"></div>
 
 </div>
 
 <footer>
 
-© ThaiRide Travel
+<div id="datetime"></div>
+
+<p>© ThaiRide Travel</p>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
