@@ -124,3 +124,21 @@ padding:40px;
 width:170px;
 margin-top:10px;
 }
+
+.services-banner{
+
+width:100%;
+padding:60px 0;
+text-align:center;
+background:#ffffff;
+
+}
+
+.services-banner img{
+
+width:90%;
+max-width:1300px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+}
