@@ -310,43 +310,24 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <h2>🚐 Airport Transfer Booking</h2>
 
-<form action="mailto:nine623@gmail.com" method="post" enctype="text/plain">
+<form action="https://formsubmit.co/nine623@gmail.com" method="POST">
 
-<div class="booking-grid">
+<label>ชื่อผู้จอง</label>
+<input type="text" name="name" required>
 
-<input type="text" name="Name" placeholder="Your Name" required>
+<label>เบอร์โทร</label>
+<input type="tel" name="phone" required>
 
-<input type="text" name="Contact" placeholder="LINE / WhatsApp">
+<label>วันเวลาไปรับ</label>
+<input type="datetime-local" name="pickup_time" required>
 
-<input type="text" name="Pickup" placeholder="Pickup Location">
+<label>สถานที่รับ</label>
+<input type="text" name="pickup_location" required>
 
-<input type="text" name="Dropoff" placeholder="Dropoff Location">
+<label>สถานที่ส่ง</label>
+<input type="text" name="drop_location" required>
 
-<input type="date" name="Date">
-
-<input type="time" name="Time">
-
-<select name="Passengers">
-<option>Passengers</option>
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5+</option>
-</select>
-
-<select name="Vehicle">
-<option>Vehicle</option>
-<option>Toyota Altis</option>
-<option>SUV</option>
-<option>VIP Van</option>
-</select>
-
-</div>
-
-<textarea name="Message" placeholder="Additional message"></textarea>
-
-<button type="submit">SEND BOOKING</button>
+<button type="submit">จองรถ</button>
 
 </form>
 
