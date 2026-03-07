@@ -30,6 +30,11 @@ gtag('js', new Date());
 gtag('config', 'G-V9XCVN1N0W');
 </script>
 
+<!-- GoatCounter Visitor Stats -->
+
+<script data-goatcounter="https://thairide.goatcounter.com/count"
+async src="//gc.zgo.at/count.js"></script>
+
 <style>
 
 body{
@@ -95,12 +100,6 @@ border-radius:10px;
 text-align:center;
 }
 
-.date{
-font-size:14px;
-opacity:0.8;
-margin-top:5px;
-}
-
 /* SCROLL */
 
 .scroll{
@@ -120,6 +119,14 @@ font-size:22px;
 @keyframes scroll{
 0%{transform:translateX(0)}
 100%{transform:translateX(-100%)}
+}
+
+/* DATE CENTER */
+
+.date-center{
+text-align:center;
+margin-top:10px;
+opacity:0.8;
 }
 
 /* VEHICLES */
@@ -262,10 +269,7 @@ grid-template-columns:1fr;
 
 <img src="hero_01.png">
 
-<div class="clock">
-<div id="clock"></div>
-<div class="date" id="date"></div>
-</div>
+<div class="clock" id="clock"></div>
 
 </section>
 
@@ -274,6 +278,8 @@ grid-template-columns:1fr;
 Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bangkok Private Car Service
 </span>
 </div>
+
+<div class="date-center" id="date"></div>
 
 <h2>Our Vehicles</h2>
 
@@ -323,9 +329,9 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <h2>Google Reviews ⭐⭐⭐⭐⭐</h2>
 
-<div class="review">"Excellent airport transfer service!"</div>
-<div class="review">"Very comfortable van and friendly driver."</div>
-<div class="review">"Best floating market tour experience."</div>
+<div class="review">Excellent airport transfer service!</div>
+<div class="review">Very comfortable van and friendly driver.</div>
+<div class="review">Best floating market tour experience.</div>
 
 </section>
 
@@ -350,8 +356,19 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 </div>
 
-<h2 style="text-align:center;margin-top:40px;">
-🌍 Visitors Around The World
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=bangkok&t=&z=10&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350"
+style="border:0;">
+</iframe>
+
+</div>
+
+<h2 style="text-align:center;margin-top:50px;">
+📊 Website Statistics
 </h2>
 
 <div class="visitor-box">
@@ -359,8 +376,7 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 <div class="card">
 <h3>👥</h3>
 <p>Total Visitors</p>
-<script async src="https://api.countapi.xyz/hit/thairide/visits?callback=websiteVisits"></script>
-<h3 id="visits">Loading</h3>
+<p>Tracked by GoatCounter</p>
 </div>
 
 <div class="card">
@@ -374,17 +390,6 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 <p>Browser</p>
 <h3 id="browser"></h3>
 </div>
-
-</div>
-
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=bangkok&t=&z=10&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="350"
-style="border:0;">
-</iframe>
 
 </div>
 
@@ -422,10 +427,6 @@ document.getElementById("date").innerHTML = date;
 
 updateClock();
 setInterval(updateClock,1000);
-
-function websiteVisits(response){
-document.querySelector("#visits").textContent = response.value;
-}
 
 let device="Desktop";
 
