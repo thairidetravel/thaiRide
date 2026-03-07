@@ -1,5 +1,7 @@
 <script>
 
+/* CLOCK */
+
 function updateClock(){
 
 let now = new Date();
@@ -31,7 +33,7 @@ visitors.innerHTML = count;
 }
 
 
-/* Hero Slide */
+/* HERO SLIDE */
 
 let slideIndex = 0;
 let slides = document.querySelectorAll(".hero-slide img");
@@ -52,5 +54,38 @@ slides[slideIndex-1].classList.add("active");
 
 showSlide();
 setInterval(showSlide,4000);
+
+
+/* BOOKING → SEND TO LINE */
+
+function sendBooking(){
+
+let name = document.getElementById("name").value;
+let contact = document.getElementById("contact").value;
+let pickup = document.getElementById("pickup").value;
+let dropoff = document.getElementById("dropoff").value;
+let date = document.getElementById("date").value;
+let time = document.getElementById("time").value;
+let passengers = document.getElementById("passengers").value;
+let vehicle = document.getElementById("vehicle").value;
+let message = document.getElementById("message").value;
+
+let text =
+"🚐 ThaiRide Booking %0A%0A"+
+"Name: "+name+"%0A"+
+"Contact: "+contact+"%0A"+
+"Pickup: "+pickup+"%0A"+
+"Dropoff: "+dropoff+"%0A"+
+"Date: "+date+"%0A"+
+"Time: "+time+"%0A"+
+"Passengers: "+passengers+"%0A"+
+"Vehicle: "+vehicle+"%0A"+
+"Message: "+message;
+
+/* เปิด LINE พร้อมข้อความ */
+
+window.open("https://line.me/R/msg/text/?"+text);
+
+}
 
 </script>
