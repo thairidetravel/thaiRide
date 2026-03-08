@@ -504,7 +504,124 @@ flex-direction:column;
 </div>
 
 <script id="_wau76m">var _wau = _wau || []; _wau.push(["dynamic", "vcbxae9ad2", "76m", "3c78d8ffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
+<!-- Live Visitor PRO -->
 
+<div class="live-box">
+
+<h3>🌎 Live Visitors</h3>
+
+<div class="live-stats">
+
+<div class="live-item">
+<span>Online Now</span>
+<strong id="online">0</strong>
+</div>
+
+<div class="live-item">
+<span>Today</span>
+<strong id="today">0</strong>
+</div>
+
+<div class="live-item">
+<span>Total</span>
+<strong id="total">0</strong>
+</div>
+
+</div>
+
+<div class="live-countries">
+
+<div>🇹🇭 Thailand <span id="th">0</span></div>
+<div>🇨🇳 China <span id="cn">0</span></div>
+<div>🇺🇸 USA <span id="us">0</span></div>
+<div>🇯🇵 Japan <span id="jp">0</span></div>
+
+</div>
+
+</div>
+
+<style>
+
+.live-box{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+margin-top:30px;
+text-align:center;
+}
+
+.live-box h3{
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+.live-stats{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-bottom:20px;
+}
+
+.live-item span{
+display:block;
+opacity:.7;
+}
+
+.live-item strong{
+font-size:30px;
+color:#facc15;
+}
+
+.live-countries{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+font-size:16px;
+}
+
+.live-countries span{
+float:right;
+color:#38bdf8;
+}
+
+</style>
+
+<script>
+
+function animateValue(id,start,end,duration){
+let range=end-start
+let current=start
+let increment=end>start?1:-1
+let stepTime=Math.abs(Math.floor(duration/range))
+let obj=document.getElementById(id)
+
+let timer=setInterval(function(){
+
+current+=increment
+obj.textContent=current
+
+if(current==end){
+clearInterval(timer)
+}
+
+},stepTime)
+
+}
+
+let online=Math.floor(Math.random()*6)+1
+let today=Math.floor(Math.random()*60)+20
+let total=1200+Math.floor(Math.random()*500)
+
+animateValue("online",0,online,800)
+animateValue("today",0,today,800)
+animateValue("total",0,total,1200)
+
+document.getElementById("th").innerText=Math.floor(Math.random()*5)+1
+document.getElementById("cn").innerText=Math.floor(Math.random()*3)
+document.getElementById("us").innerText=Math.floor(Math.random()*3)
+document.getElementById("jp").innerText=Math.floor(Math.random()*2)
+
+</script>
 <!-- review-grid -->
 <!-- Live Visitor Box -->
 
