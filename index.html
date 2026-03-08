@@ -25,7 +25,57 @@ var sc_security="e5f7109c";
 <script src="https://www.statcounter.com/counter/counter.js" async></script>
 
 <style>
+  
+/* CHAT BUTTON */
 
+.chat-widget{
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:9999;
+font-family:Arial;
+}
+
+.chat-main{
+background:#2563eb;
+color:white;
+padding:14px 20px;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+.chat-menu{
+display:none;
+flex-direction:column;
+gap:10px;
+margin-bottom:10px;
+}
+
+.chat-menu a{
+display:flex;
+align-items:center;
+gap:10px;
+padding:10px 14px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+.line-chat{
+background:#06C755;
+}
+
+.whatsapp-chat{
+background:#25D366;
+}
+
+.chat-menu img{
+width:26px;
+}
 body{
 margin:0;
 font-family:Arial;
