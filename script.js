@@ -1,5 +1,3 @@
-<script>
-
 /* CLOCK */
 
 function updateClock(){
@@ -88,4 +86,17 @@ window.open("https://line.me/R/msg/text/?"+text);
 
 }
 
-</script>
+
+/* CHAT MENU */
+
+function toggleChat(){
+
+let menu = document.getElementById("chatMenu")
+
+if(menu.style.display === "flex"){
+menu.style.display = "none"
+}else{
+menu.style.display = "flex"
+}
+
+}
