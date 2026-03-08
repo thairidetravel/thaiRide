@@ -7,6 +7,15 @@
 
 <title>ThaiRide Travel | Bangkok Airport Transfer</title>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V9XCVN1N0W');
+</script>
+
 <style>
 
 body{
@@ -30,8 +39,10 @@ justify-content:space-between;
 align-items:center;
 }
 
+/* LOGO BIGGER */
+
 .logo img{
-height:55px;
+height:80px;
 }
 
 nav a{
@@ -39,6 +50,15 @@ margin-left:20px;
 text-decoration:none;
 color:white;
 font-weight:bold;
+}
+
+/* CLOCK */
+
+.clock-bar{
+text-align:right;
+margin-top:10px;
+font-size:15px;
+color:#38bdf8;
 }
 
 /* ADS */
@@ -216,7 +236,7 @@ text-align:center;
 }
 
 .footer-logo img{
-height:70px;
+height:90px;
 margin-bottom:20px;
 }
 
@@ -290,6 +310,10 @@ font-size:26px;
 </nav>
 
 </header>
+
+<!-- CLOCK DATE -->
+
+<div class="clock-bar" id="clock"></div>
 
 <div class="ad">AD Banner 728x90</div>
 
@@ -446,11 +470,7 @@ font-size:26px;
 
 </div>
 
-<!-- FOOTER AD -->
-
 <div class="ad">AD Banner 728x90</div>
-
-<!-- FOOTER -->
 
 <footer class="footer-contact">
 
@@ -469,9 +489,7 @@ font-size:26px;
 </div>
 
 <div class="footer-bottom">
-
 © 2026 ThaiRide Travel
-
 </div>
 
 </footer>
@@ -479,6 +497,8 @@ font-size:26px;
 </div>
 
 <script>
+
+/* HERO SLIDE */
 
 let slide=0
 let slides=document.querySelectorAll(".hero img")
@@ -498,6 +518,24 @@ slides[slide].classList.add("active")
 }
 
 setInterval(showSlide,4000)
+
+/* CLOCK */
+
+function updateClock(){
+
+let now=new Date()
+
+let date=now.toLocaleDateString('en-US')
+
+let time=now.toLocaleTimeString('en-US')
+
+document.getElementById("clock").innerHTML=
+date+" | "+time
+
+}
+
+setInterval(updateClock,1000)
+updateClock()
 
 </script>
 
