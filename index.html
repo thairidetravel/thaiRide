@@ -7,7 +7,7 @@
 
 <title>ThaiRide Travel | Bangkok Airport Transfer</title>
 
-<!-- Google Analytics -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -39,26 +39,39 @@ justify-content:space-between;
 align-items:center;
 }
 
-/* LOGO BIGGER */
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
 
 .logo img{
-height:80px;
+height:75px;
 }
+
+.logo-text{
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+/* CLOCK */
+
+.clock{
+font-size:16px;
+font-weight:bold;
+color:#facc15;
+}
+
+/* MENU */
 
 nav a{
 margin-left:20px;
 text-decoration:none;
 color:white;
 font-weight:bold;
-}
-
-/* CLOCK */
-
-.clock-bar{
-text-align:right;
-margin-top:10px;
-font-size:15px;
-color:#38bdf8;
 }
 
 /* ADS */
@@ -236,7 +249,7 @@ text-align:center;
 }
 
 .footer-logo img{
-height:90px;
+height:70px;
 margin-bottom:20px;
 }
 
@@ -261,6 +274,11 @@ opacity:.7;
 /* MOBILE */
 
 @media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:10px;
+}
 
 .services,
 .vehicle-grid,
@@ -299,7 +317,10 @@ font-size:26px;
 
 <div class="logo">
 <img src="logo.png">
+<div class="logo-text">ThaiRide Travel</div>
 </div>
+
+<div class="clock" id="clock"></div>
 
 <nav>
 <a href="#">Home</a>
@@ -311,13 +332,7 @@ font-size:26px;
 
 </header>
 
-<!-- CLOCK DATE -->
-
-<div class="clock-bar" id="clock"></div>
-
 <div class="ad">AD Banner 728x90</div>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -331,8 +346,6 @@ font-size:26px;
 </div>
 
 </section>
-
-<!-- SERVICES -->
 
 <section class="services">
 
@@ -352,8 +365,6 @@ font-size:26px;
 </div>
 
 </section>
-
-<!-- VEHICLE -->
 
 <h2 style="margin-top:40px">Vehicle Types</h2>
 
@@ -378,8 +389,6 @@ font-size:26px;
 
 <div class="ad">AD 300x250</div>
 
-<!-- TOURS -->
-
 <h2>Popular Tours</h2>
 
 <div class="tour-grid">
@@ -396,8 +405,6 @@ font-size:26px;
 
 </div>
 
-<!-- GALLERY -->
-
 <h2 style="margin-top:40px">Travel Gallery</h2>
 
 <div class="gallery-grid">
@@ -408,8 +415,6 @@ font-size:26px;
 <img src="G-04.png">
 
 </div>
-
-<!-- STATS -->
 
 <div class="stats">
 
@@ -435,8 +440,6 @@ font-size:26px;
 
 </div>
 
-<!-- REVIEWS -->
-
 <h2 style="margin-top:40px">Customer Reviews</h2>
 
 <div class="review-grid">
@@ -446,8 +449,6 @@ font-size:26px;
 <div class="review">Highly recommended ⭐⭐⭐⭐⭐</div>
 
 </div>
-
-<!-- QR CONTACT -->
 
 <h2 style="margin-top:40px">Contact Us</h2>
 
@@ -489,7 +490,9 @@ font-size:26px;
 </div>
 
 <div class="footer-bottom">
+
 © 2026 ThaiRide Travel
+
 </div>
 
 </footer>
@@ -525,16 +528,20 @@ function updateClock(){
 
 let now=new Date()
 
-let date=now.toLocaleDateString('en-US')
+let date=now.toLocaleDateString('en-US',{
+year:'numeric',
+month:'long',
+day:'numeric'
+})
 
 let time=now.toLocaleTimeString('en-US')
 
-document.getElementById("clock").innerHTML=
-date+" | "+time
+document.getElementById("clock").innerHTML=date+" | "+time
 
 }
 
 setInterval(updateClock,1000)
+
 updateClock()
 
 </script>
