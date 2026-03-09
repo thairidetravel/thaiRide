@@ -17,10 +17,10 @@ gtag('config', 'G-V9XCVN1N0W');
 </script>
 
 <!-- Statcounter -->
-<script>
-var sc_project=13209398;
-var sc_invisible=1;
-var sc_security="e5f7109c";
+<script type="text/javascript">
+var sc_project=13209398; 
+var sc_invisible=1; 
+var sc_security="e5f7109c"; 
 </script>
 <script src="https://www.statcounter.com/counter/counter.js" async></script>
 
@@ -38,6 +38,8 @@ max-width:1200px;
 margin:auto;
 padding:20px;
 }
+
+/* HEADER */
 
 header{
 display:flex;
@@ -60,30 +62,40 @@ color:#38bdf8;
 }
 
 .clock{
-color:#facc15;
+font-size:16px;
 font-weight:bold;
+color:#facc15;
 }
 
 nav a{
 margin-left:20px;
-color:white;
 text-decoration:none;
+color:white;
 font-weight:bold;
 }
 
-.hero{
-position:relative;
+/* ADS */
+
+.ad{
+background:#1e40af;
+text-align:center;
+padding:16px;
+margin:25px 0;
+border-radius:8px;
+font-weight:bold;
 }
+
+/* HERO */
+
+.hero{position:relative;}
 
 .hero img{
 width:100%;
-display:none;
 border-radius:10px;
+display:none;
 }
 
-.hero img.active{
-display:block;
-}
+.hero img.active{display:block;}
 
 .hero-text{
 position:absolute;
@@ -91,9 +103,7 @@ top:35%;
 left:50px;
 }
 
-.hero-text h1{
-font-size:40px;
-}
+.hero-text h1{font-size:40px;}
 
 .book-btn{
 background:#f97316;
@@ -144,6 +154,7 @@ text-align:center;
 
 .tour-slider{
 overflow:hidden;
+position:relative;
 }
 
 .tour-track{
@@ -221,9 +232,7 @@ margin-top:30px;
 text-align:center;
 }
 
-.qr-grid img{
-width:120px;
-}
+.qr-grid img{width:120px;}
 
 /* CHAT */
 
@@ -236,6 +245,7 @@ z-index:9999;
 
 .chat-main{
 background:#2563eb;
+color:white;
 padding:14px 20px;
 border-radius:30px;
 cursor:pointer;
@@ -251,11 +261,13 @@ margin-bottom:10px;
 
 .chat-menu a{
 display:flex;
+align-items:center;
 gap:10px;
-padding:10px;
+padding:10px 14px;
 border-radius:30px;
 color:white;
 text-decoration:none;
+font-weight:bold;
 }
 
 .line-chat{background:#06C755;}
@@ -288,12 +300,22 @@ text-decoration:none;
 
 </header>
 
+<!-- AD 1 -->
+
+<div class="ad">AD Banner 728x90</div>
+
 <section class="hero">
 
 <img src="heroslide_01.png" class="active">
 <img src="heroslide_02.png">
 <img src="heroslide_03.png">
 <img src="heroslide_04.png">
+<img src="heroslide_05.png">
+<img src="heroslide_06.png">
+<img src="heroslide_07.png">
+<img src="heroslide_08.png">
+<img src="heroslide_09.png">
+<img src="heroslide_10.png">
 
 <div class="hero-text">
 <h1>Bangkok Airport Transfer</h1>
@@ -321,7 +343,7 @@ text-decoration:none;
 
 </section>
 
-<h2>Vehicle Types</h2>
+<h2 style="margin-top:40px">Vehicle Types</h2>
 
 <div class="vehicle-grid">
 
@@ -341,6 +363,10 @@ text-decoration:none;
 </div>
 
 </div>
+
+<!-- AD 2 -->
+
+<div class="ad">AD Banner 728x90</div>
 
 <h2>Popular Tours</h2>
 
@@ -372,7 +398,7 @@ text-decoration:none;
 
 </div>
 
-<h2>Travel Gallery</h2>
+<h2 style="margin-top:40px">Travel Gallery</h2>
 
 <div class="gallery-grid">
 
@@ -388,15 +414,15 @@ text-decoration:none;
 
 </div>
 
-<!-- LIVE VISITOR (WHO'S) -->
+<!-- LIVE VISITOR -->
 
 <div style="text-align:center;margin:40px 0">
 
 <h2>🌎 Live Visitors</h2>
 
 <script id="_wautnh">
-var _wau=_wau||[];
-_wau.push(["dynamic","vhzzo69l0r","tnh","3c78d8c4302b","small"]);
+var _wau = _wau || [];
+_wau.push(["dynamic", "vhzzo69l0r", "tnh", "3c78d8c4302b", "small"]);
 </script>
 
 <script async src="//waust.at/d.js"></script>
@@ -406,17 +432,8 @@ _wau.push(["dynamic","vhzzo69l0r","tnh","3c78d8c4302b","small"]);
 <!-- WORLD MAP -->
 
 <div style="text-align:center;margin:40px 0">
-
 <h2>🌍 Visitors Around The World</h2>
-
 <img src="https://s01.flagcounter.com/map/XXXXX/size_l/txt_ffffff/border_cccccc/pageviews_0/viewers_0/flags_0/">
-
-</div>
-
-<!-- ONLINE VISITOR -->
-
-<div style="text-align:center;font-size:20px;margin-bottom:20px">
-Online Now : <span id="onlineCount">3</span>
 </div>
 
 <div class="stats">
@@ -443,7 +460,13 @@ Online Now : <span id="onlineCount">3</span>
 
 </div>
 
-<h2>Customer Reviews</h2>
+<!-- ONLINE -->
+
+<div style="text-align:center;font-size:20px;margin-top:20px">
+📈 Online Now : <span id="onlineCount">3</span>
+</div>
+
+<h2 style="margin-top:40px">Customer Reviews</h2>
 
 <div class="review-grid">
 
@@ -453,7 +476,7 @@ Online Now : <span id="onlineCount">3</span>
 
 </div>
 
-<h2>Contact Us</h2>
+<h2 style="margin-top:40px">Contact Us</h2>
 
 <div class="qr-grid">
 
@@ -474,8 +497,20 @@ Online Now : <span id="onlineCount">3</span>
 
 </div>
 
+<!-- AD 3 -->
+
+<div class="ad">AD Banner 728x90</div>
+
 <footer style="margin-top:60px;text-align:center">
+
+<img src="logo_01.png" height="70"><br><br>
+
+Contact ThaiRide Travel
+
+<br><br>
+
 © 2026 ThaiRide Travel
+
 </footer>
 
 </div>
@@ -486,12 +521,19 @@ Online Now : <span id="onlineCount">3</span>
 
 <div class="chat-menu" id="chatMenu">
 
-<a href="https://line.me/R/ti/p/@775hjmvl" class="line-chat">LINE</a>
-<a href="https://wa.me/66852242135" class="whatsapp-chat">WhatsApp</a>
+<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" class="line-chat">
+LINE
+</a>
+
+<a href="https://wa.me/66852242135" target="_blank" class="whatsapp-chat">
+WhatsApp
+</a>
 
 </div>
 
-<div class="chat-main" onclick="toggleChat()">💬 Chat</div>
+<div class="chat-main" onclick="toggleChat()">
+💬 Chat with us
+</div>
 
 </div>
 
@@ -502,7 +544,7 @@ position:fixed;
 left:20px;
 bottom:20px;
 background:#1e293b;
-padding:15px;
+padding:15px 20px;
 border-radius:8px;
 display:none;
 z-index:9999;">
@@ -514,74 +556,17 @@ z-index:9999;">
 /* CHAT */
 
 function toggleChat(){
-
 let menu=document.getElementById("chatMenu")
-
-if(menu.style.display==="flex"){
-menu.style.display="none"
-}else{
-menu.style.display="flex"
+menu.style.display=menu.style.display==="flex"?"none":"flex"
 }
-
-}
-
-/* HERO SLIDE */
-
-let slide=0
-let slides=document.querySelectorAll(".hero img")
-
-function showSlide(){
-
-slides.forEach(s=>s.classList.remove("active"))
-
-slide++
-
-if(slide>=slides.length){
-slide=0
-}
-
-slides[slide].classList.add("active")
-
-}
-
-setInterval(showSlide,4000)
-
-/* TOUR SLIDER */
-
-let tourIndex=0
-const tourTrack=document.getElementById("tourTrack")
-const tourTotal=document.querySelectorAll(".tour").length
-
-function slideTours(){
-
-tourIndex++
-
-if(tourIndex>tourTotal-2){
-tourIndex=0
-}
-
-tourTrack.style.transform="translateX(-"+(tourIndex*50)+"%)"
-
-}
-
-setInterval(slideTours,4000)
 
 /* CLOCK */
 
 function updateClock(){
-
 let now=new Date()
-
-let date=now.toLocaleDateString('en-US',{
-year:'numeric',
-month:'long',
-day:'numeric'
-})
-
+let date=now.toLocaleDateString('en-US')
 let time=now.toLocaleTimeString('en-US')
-
 document.getElementById("clock").innerHTML=date+" | "+time
-
 }
 
 setInterval(updateClock,1000)
@@ -591,13 +576,8 @@ setInterval(updateClock,1000)
 let online=3
 
 setInterval(()=>{
-
-online+=Math.floor(Math.random()*2)
-
-if(online>9){online=3}
-
+online=Math.floor(Math.random()*6)+3
 document.getElementById("onlineCount").innerText=online
-
 },5000)
 
 /* COUNTER */
@@ -607,20 +587,16 @@ const counters=document.querySelectorAll(".counter")
 counters.forEach(counter=>{
 
 let target=+counter.getAttribute("data-target")
-
 let count=0
 
 function update(){
-
 count+=Math.ceil(target/100)
-
 if(count>=target){
 counter.innerText=target+"+"
 }else{
 counter.innerText=count
 requestAnimationFrame(update)
 }
-
 }
 
 update()
@@ -630,15 +606,9 @@ update()
 /* BOOKING POPUP */
 
 function showBooking(){
-
 let popup=document.getElementById("bookingPopup")
-
 popup.style.display="block"
-
-setTimeout(()=>{
-popup.style.display="none"
-},4000)
-
+setTimeout(()=>{popup.style.display="none"},4000)
 }
 
 setInterval(showBooking,15000)
