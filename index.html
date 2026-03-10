@@ -32,13 +32,44 @@ font-family:Arial;
 background:#0f172a;
 color:white;
 }
+.line-float{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#06C755;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+z-index:9999;
+}
 
+.line-float img{
+width:35px;
+}
+
+.line-float:hover{
+transform:scale(1.1);
+}
 .container{
 max-width:1200px;
 margin:auto;
 padding:20px;
 }
+.top-banner{
+text-align:center;
+margin:25px 0;
+}
 
+.top-banner img{
+max-width:728px;
+width:100%;
+height:auto;
+border-radius:10px;
+}
 /* HEADER */
 
 header{
@@ -669,7 +700,17 @@ _wau.push(["dynamic", "vhzzo69l0r", "tnh", "3c78d8c4302b", "small"]);
 <img src="https://dummyimage.com/728x90/ff6600/ffffff&text=Find+Hotels+Worldwide+Agoda">
 </a>
 </div>
+</section>
+<!-- END HERO -->
 
+<!-- BANNER 728x90 -->
+<div class="top-banner">
+<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank">
+<img src="banner728_90.jpg" alt="Bangkok Tours Banner">
+</a>
+</div>
+
+<section class="services">
 <footer style="margin-top:60px;text-align:center">
 
 <img src="logo_01.png" height="70"><br><br>
@@ -780,7 +821,14 @@ document.getElementById("onlineCount").innerText = num
 setInterval(randomOnline,5000)
 
   </script>
+<!-- FLOATING LINE CHAT -->
+<a href="https://line.me/R/ti/p/@775hjmvl" 
+class="line-float" 
+target="_blank">
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg">
+
+</a>
 </body>
 </html>
 
