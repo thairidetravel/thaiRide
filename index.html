@@ -632,27 +632,6 @@ Contact ThaiRide Travel. © 2026 ThaiRide Travel
 
 </footer>
 
-</div>
-function updateClock(){
-
-let now = new Date()
-
-let date = now.toLocaleDateString("en-GB",{
-weekday:"long",
-day:"numeric",
-month:"long",
-year:"numeric"
-})
-
-let time = now.toLocaleTimeString()
-
-document.getElementById("date").innerText = date
-document.getElementById("time").innerText = time
-
-}
-
-setInterval(updateClock,1000)
-updateClock()
 </body>
 </html>
 
