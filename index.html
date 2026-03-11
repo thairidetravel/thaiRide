@@ -117,11 +117,37 @@ background:linear-gradient(#0a2540,#02101f);
 .lux-watch{
 width:260px;
 height:260px;
-margin:auto;
+border:8px solid gold;
 border-radius:50%;
-border:10px solid #d4af37;
+margin:40px auto;
 position:relative;
-background:radial-gradient(circle,#123a5c,#020d19);
+background:radial-gradient(circle,#0b3b5a,#021420);
+}
+
+.hand{
+position:absolute;
+bottom:50%;
+left:50%;
+transform-origin:bottom;
+transform:translateX(-50%) rotate(90deg);
+}
+
+.hour{
+width:6px;
+height:60px;
+background:white;
+}
+
+.minute{
+width:4px;
+height:90px;
+background:#ddd;
+}
+
+.second{
+width:2px;
+height:100px;
+background:red;
 }
 
 /* SERVICES */
@@ -311,13 +337,132 @@ BOOK VIA LINE
 
 <h2>Bangkok Time</h2>
 
+<section class="luxury-clock-section">
+
+<h2 class="clock-title">Bangkok Time</h2>
+
 <div class="lux-watch">
+
+<div class="number n12">12</div>
+<div class="number n3">3</div>
+<div class="number n6">6</div>
+<div class="number n9">9</div>
 
 <div class="hand hour" id="hour"></div>
 <div class="hand minute" id="minute"></div>
 <div class="hand second" id="second"></div>
 
+<div class="center-dot"></div>
+
 </div>
+</section>
+
+<style>
+
+.luxury-clock-section{
+text-align:center;
+padding:40px 0;
+background:linear-gradient(180deg,#071a2c,#020c16);
+}
+
+.clock-title{
+color:white;
+margin-bottom:30px;
+font-size:22px;
+}
+
+.lux-watch{
+width:260px;
+height:260px;
+border:8px solid gold;
+border-radius:50%;
+margin:auto;
+position:relative;
+background:radial-gradient(circle,#0b3b5a,#021420);
+box-shadow:0 0 25px rgba(255,215,0,0.5);
+}
+
+.number{
+position:absolute;
+color:white;
+font-weight:bold;
+font-size:20px;
+}
+
+.n12{top:8px;left:50%;transform:translateX(-50%)}
+.n3{right:10px;top:50%;transform:translateY(-50%)}
+.n6{bottom:8px;left:50%;transform:translateX(-50%)}
+.n9{left:10px;top:50%;transform:translateY(-50%)}
+
+.hand{
+position:absolute;
+bottom:50%;
+left:50%;
+transform-origin:bottom;
+transform:translateX(-50%) rotate(90deg);
+border-radius:4px;
+}
+
+.hour{
+width:6px;
+height:60px;
+background:white;
+}
+
+.minute{
+width:4px;
+height:90px;
+background:#ddd;
+}
+
+.second{
+width:2px;
+height:100px;
+background:red;
+}
+
+.center-dot{
+position:absolute;
+width:12px;
+height:12px;
+background:gold;
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+</style>
+
+<script>
+
+function updateClock(){
+
+const now = new Date()
+
+const sec = now.getSeconds()
+const min = now.getMinutes()
+const hr = now.getHours()
+
+const secDeg = sec * 6
+const minDeg = min * 6 + sec * 0.1
+const hrDeg = hr * 30 + min * 0.5
+
+document.getElementById("second").style.transform =
+"translateX(-50%) rotate(" + secDeg + "deg)"
+
+document.getElementById("minute").style.transform =
+"translateX(-50%) rotate(" + minDeg + "deg)"
+
+document.getElementById("hour").style.transform =
+"translateX(-50%) rotate(" + hrDeg + "deg)"
+
+}
+
+setInterval(updateClock,1000)
+updateClock()
+
+</script>
 
 </section>
 
@@ -473,6 +618,34 @@ heroSlides[heroIndex].classList.add("active")
 },4000)
 
 </script>
+<script>
 
+function updateClock(){
+
+const now = new Date()
+
+const sec = now.getSeconds()
+const min = now.getMinutes()
+const hr = now.getHours()
+
+const secDeg = sec * 6
+const minDeg = min * 6
+const hrDeg = hr * 30 + min * 0.5
+
+document.getElementById("second").style.transform =
+"translateX(-50%) rotate("+secDeg+"deg)"
+
+document.getElementById("minute").style.transform =
+"translateX(-50%) rotate("+minDeg+"deg)"
+
+document.getElementById("hour").style.transform =
+"translateX(-50%) rotate("+hrDeg+"deg)"
+
+}
+
+setInterval(updateClock,1000)
+updateClock()
+
+</script>
 </body>
 </html>
