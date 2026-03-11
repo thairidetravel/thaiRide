@@ -33,6 +33,12 @@ background:#0f172a;
 color:white;
 }
 
+ .bangkok-clock{
+padding:60px 0;
+background:linear-gradient(#0a1f35,#051321);
+text-align:center;
+ }
+
 .container{
 max-width:1200px;
 margin:auto;
@@ -343,6 +349,226 @@ text-decoration:none;
 <div class="banner">
 <a href="https://www.agoda.com/search?city=Bangkok&cid=1434592" target="_blank">
 <div class="agoda728">
+
+<section class="luxury-clock-section">
+
+<h2 class="clock-title">Bangkok Time</h2>
+
+<div class="lux-watch">
+
+<div class="gear gear1"></div>
+<div class="gear gear2"></div>
+<div class="gear gear3"></div>
+<div class="gear gear4"></div>
+
+<div class="number n12">12</div>
+<div class="number n3">3</div>
+<div class="number n6">6</div>
+<div class="number n9">9</div>
+
+<div class="hand hour" id="hour"></div>
+<div class="hand minute" id="minute"></div>
+<div class="hand second" id="second"></div>
+
+<div class="center-logo">ThaiRide</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+.luxury-clock-section{
+padding:70px 0;
+text-align:center;
+background:linear-gradient(#0a2540,#02101f);
+}
+
+.clock-title{
+color:#d4af37;
+font-size:32px;
+margin-bottom:40px;
+letter-spacing:3px;
+}
+
+/* watch */
+
+.lux-watch{
+width:320px;
+height:320px;
+margin:auto;
+border-radius:50%;
+position:relative;
+
+border:12px solid #d4af37;
+
+background:radial-gradient(circle,#123a5c,#020d19);
+
+box-shadow:
+0 0 40px rgba(0,0,0,0.7),
+inset 0 0 60px rgba(0,0,0,0.9);
+}
+
+/* numbers */
+
+.number{
+position:absolute;
+color:#d4af37;
+font-size:28px;
+font-weight:bold;
+font-family:serif;
+}
+
+.n12{top:15px;left:50%;transform:translateX(-50%)}
+.n3{right:15px;top:50%;transform:translateY(-50%)}
+.n6{bottom:15px;left:50%;transform:translateX(-50%)}
+.n9{left:15px;top:50%;transform:translateY(-50%)}
+
+/* hands */
+
+.hand{
+position:absolute;
+left:50%;
+transform-origin:bottom;
+transform:translateX(-50%) rotate(0deg);
+}
+
+.hour{
+height:85px;
+width:7px;
+bottom:50%;
+background:#e6c07b;
+border-radius:5px;
+}
+
+.minute{
+height:120px;
+width:5px;
+bottom:50%;
+background:white;
+border-radius:5px;
+}
+
+.second{
+height:140px;
+width:2px;
+bottom:50%;
+background:#ff3b3b;
+}
+
+/* center */
+
+.center-logo{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#0a2540;
+padding:8px 14px;
+border-radius:20px;
+border:2px solid #d4af37;
+color:white;
+font-weight:bold;
+}
+
+/* gears */
+
+.gear{
+position:absolute;
+border-radius:50%;
+border:3px solid rgba(255,255,255,0.4);
+}
+
+.gear1{
+width:80px;
+height:80px;
+top:60px;
+left:40px;
+animation:spin 10s linear infinite;
+}
+
+.gear2{
+width:60px;
+height:60px;
+bottom:50px;
+right:40px;
+animation:spinReverse 8s linear infinite;
+}
+
+.gear3{
+width:45px;
+height:45px;
+top:160px;
+right:100px;
+animation:spin 6s linear infinite;
+}
+
+.gear4{
+width:40px;
+height:40px;
+bottom:120px;
+left:100px;
+animation:spinReverse 7s linear infinite;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+
+@keyframes spinReverse{
+from{transform:rotate(360deg)}
+to{transform:rotate(0deg)}
+}
+
+/* mobile */
+
+@media(max-width:600px){
+
+.lux-watch{
+width:240px;
+height:240px;
+}
+
+.hour{height:65px}
+.minute{height:90px}
+.second{height:110px}
+
+}
+
+</style>
+
+
+<script>
+
+function updateClock(){
+
+let now = new Date()
+
+let sec = now.getSeconds()
+let min = now.getMinutes()
+let hr = now.getHours()
+
+let secDeg = sec * 6
+let minDeg = min * 6 + sec * 0.1
+let hrDeg = hr * 30 + min * 0.5
+
+document.getElementById("second").style.transform =
+"translateX(-50%) rotate("+secDeg+"deg)"
+
+document.getElementById("minute").style.transform =
+"translateX(-50%) rotate("+minDeg+"deg)"
+
+document.getElementById("hour").style.transform =
+"translateX(-50%) rotate("+hrDeg+"deg)"
+
+}
+
+setInterval(updateClock,1000)
+updateClock()
+
+</script>
 
 <div class="agoda-text">
 Bangkok Hotels Deals
