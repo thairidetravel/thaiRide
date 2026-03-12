@@ -729,6 +729,7 @@ const data = Object.fromEntries(formData.entries());
 document.getElementById("status").innerText="Sending booking...";
 
 await fetch("https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco",{
+
 method:"POST",
 headers:{
 "Content-Type":"application/json"
