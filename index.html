@@ -595,47 +595,44 @@ updateClock()
 
 <form id="bookingForm">
 
-<label>Full Name (ชื่อผู้จอง)</label>
-<input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:15px">
+<label>Full Name</label>
+<input type="text" name="name" placeholder="Enter your name">
 
 <label>Phone / WhatsApp</label>
-<input type="text" name="phone" required style="width:100%;padding:10px;margin-bottom:15px">
+<input type="text" name="phone" placeholder="Enter phone number">
 
 <label>Email</label>
-<input type="email" name="email" style="width:100%;padding:10px;margin-bottom:15px">
+<input type="email" name="email" placeholder="Enter email">
 
-<label>Pickup Location (สถานที่รับ)</label>
-<input type="text" name="pickup" required style="width:100%;padding:10px;margin-bottom:15px">
+<label>Pickup Location</label>
+<input type="text" name="pickup" placeholder="Airport / Hotel">
 
-<label>Drop-off Location (สถานที่ส่ง)</label>
-<input type="text" name="dropoff" required style="width:100%;padding:10px;margin-bottom:15px">
+<label>Drop-off Location</label>
+<input type="text" name="dropoff" placeholder="Destination">
 
-<label>Pickup Date (วันที่รับ)</label>
-<input type="date" name="date" required style="width:100%;padding:10px;margin-bottom:15px">
+<label>Pickup Date</label>
+<input type="date" name="date">
 
-<label>Pickup Time (เวลารับ)</label>
-<input type="time" name="time" required style="width:100%;padding:10px;margin-bottom:15px">
+<label>Pickup Time</label>
+<input type="time" name="time">
 
-<label>Number of Passengers (จำนวนผู้โดยสาร)</label>
-<input type="number" name="passengers" style="width:100%;padding:10px;margin-bottom:15px">
+<label>Passengers</label>
+<input type="number" name="passengers" placeholder="Number of passengers">
 
-<label>Car Type (ประเภทรถ)</label>
-<select name="car_type" style="width:100%;padding:10px;margin-bottom:15px">
-<option value="Sedan">Sedan</option>
-<option value="SUV">SUV</option>
-<option value="Van">Van</option>
-<option value="Luxury">Luxury</option>
+<label>Car Type</label>
+<select name="car_type">
+<option>Sedan</option>
+<option>SUV</option>
+<option>Van</option>
 </select>
 
-<label>Flight Number (ถ้ามี)</label>
-<input type="text" name="flight" style="width:100%;padding:10px;margin-bottom:15px">
+<label>Flight Number</label>
+<input type="text" name="flight" placeholder="Optional">
 
-<label>Note / Special Request</label>
-<textarea name="note" rows="4" style="width:100%;padding:10px;margin-bottom:20px"></textarea>
+<label>Note</label>
+<textarea name="note" placeholder="Special request"></textarea>
 
-<button type="submit" style="width:100%;padding:12px;background:#007bff;color:white;border:none;border-radius:5px;font-size:16px">
-Submit Booking
-</button>
+<button type="submit">Submit Booking</button>
 
 </form>
 
