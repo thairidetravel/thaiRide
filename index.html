@@ -616,129 +616,120 @@ _wau.push(["dynamic", "vhzzo69l0r", "tnh", "3c78d8c4302b", "small"]);
 
 </div>
 
-<section id="booking" style="background:#0f172a;padding:50px 20px;color:white;font-family:Arial">
+<!-- ThaiRide Travel Booking -->
 
-<h2 style="text-align:center;font-size:28px;margin-bottom:30px">
-Airport Transfer Booking
-</h2>
+<section id="booking">
 
-<form id="bookingForm" style="max-width:800px;margin:auto">
+<style>
+#booking{
+font-family:Arial;
+background:#111;
+color:white;
+padding:40px 20px;
+}
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+#booking form{
+max-width:500px;
+margin:auto;
+background:#1b1b1b;
+padding:25px;
+border-radius:10px;
+}
 
-<div>
-<label>Full Name *</label>
-<input required name="name" type="text" style="width:100%;padding:12px">
-</div>
+#booking input,
+#booking select{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:5px;
+border:none;
+}
 
-<div>
-<label>Phone / WhatsApp *</label>
-<input required name="phone" type="text" style="width:100%;padding:12px">
-</div>
+#booking button{
+width:100%;
+padding:12px;
+background:#00aaff;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
 
-<div>
+#booking button:hover{
+background:#008ecc;
+}
+</style>
+
+<h2 style="text-align:center;">🚐 Book Your Transfer</h2>
+
+<form action="https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco" method="POST" target="hidden_iframe">
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Phone</label>
+<input type="text" name="phone" required>
+
+<label>Email</label>
+<input type="email" name="email">
+
 <label>Passengers</label>
-<select name="passengers" style="width:100%;padding:12px">
+<select name="passengers">
 <option>1</option>
 <option>2</option>
 <option>3</option>
 <option>4</option>
 <option>5</option>
-<option>6</option>
-<option>7+</option>
 </select>
-</div>
 
-<div>
 <label>Airport</label>
-<select name="airport" style="width:100%;padding:12px">
-<option value="BKK">Suvarnabhumi Airport (BKK)</option>
-<option value="DMK">Don Mueang Airport (DMK)</option>
+<select name="airport">
+<option>BKK</option>
+<option>DMK</option>
 </select>
-</div>
 
-<div>
 <label>Vehicle</label>
-<select name="vehicle" style="width:100%;padding:12px">
+<select name="vehicle">
 <option>Sedan</option>
 <option>SUV</option>
-<option>VIP Van</option>
+<option>Van</option>
 </select>
-</div>
 
-<div>
-<label>Date *</label>
-<input required name="date" type="date" style="width:100%;padding:12px">
-</div>
+<label>Date</label>
+<input type="date" name="date" required>
 
-<div>
-<label>Time *</label>
-<input required name="time" type="time" style="width:100%;padding:12px">
-</div>
+<label>Time</label>
+<input type="time" name="time" required>
 
-</div>
+<label>Pickup</label>
+<input type="text" name="pickup" required>
 
-<div style="margin-top:15px">
-<label>Pickup Location *</label>
-<input required name="pickup" type="text" style="width:100%;padding:12px">
-</div>
+<label>Dropoff</label>
+<input type="text" name="dropoff" required>
 
-<div style="margin-top:15px">
-<label>Drop-off Location *</label>
-<input required name="dropoff" type="text" style="width:100%;padding:12px">
-</div>
-
-<div style="margin-top:15px">
 <label>Flight Number</label>
-<input name="flight" type="text" style="width:100%;padding:12px">
-</div>
+<input type="text" name="flight">
 
-<div style="margin-top:15px">
-<label>Special Request</label>
-<textarea name="message" style="width:100%;padding:12px;height:90px"></textarea>
-</div>
+<label>Message</label>
+<input type="text" name="message">
 
-<button type="submit"
-style="margin-top:25px;width:100%;padding:16px;background:#38bdf8;border:none;font-size:18px;color:white;border-radius:6px">
-Book Now
-</button>
+<button type="submit">BOOK NOW</button>
 
 </form>
 
-<p id="status" style="text-align:center;margin-top:20px"></p>
-
-</section>
-
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 <script>
-
-const form = document.getElementById("bookingForm");
-
-form.addEventListener("submit",async function(e){
-
-e.preventDefault();
-
-const formData = new FormData(form);
-const data = Object.fromEntries(formData.entries());
-
-document.getElementById("status").innerText="Sending booking...";
-
-await fetch("https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco",{
-
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(data)
+document.querySelector("#booking form").addEventListener("submit", function(){
+setTimeout(function(){
+alert("✅ Booking sent successfully. We will contact you soon.");
+},500);
 });
-
-document.getElementById("status").innerText="Booking sent successfully";
-
-form.reset();
-
-});
-
 </script>
+
+</section>
 
 <!-- AD 3 Agoda -->
 
