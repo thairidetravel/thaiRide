@@ -552,6 +552,87 @@ updateClock()
 
 </div>
 
+....เนื้อหาเว็บ....
+
+<section id="booking">
+
+<h2>Book Your Transfer</h2>
+
+<form id="bookingForm">
+
+<input type="text" name="name" placeholder="Name" required>
+<br><br>
+
+<input type="tel" name="phone" placeholder="Phone" required>
+<br><br>
+
+<input type="text" name="pickup" placeholder="Pickup location" required>
+<br><br>
+
+<input type="text" name="dropoff" placeholder="Dropoff location" required>
+<br><br>
+
+<input type="date" name="date" required>
+<br><br>
+
+<input type="time" name="time" required>
+<br><br>
+
+<select name="car">
+<option>Sedan</option>
+<option>SUV</option>
+<option>Van</option>
+</select>
+
+<br><br>
+
+<textarea name="note" placeholder="Note"></textarea>
+
+<br><br>
+
+<button type="submit">BOOK NOW</button>
+
+</form>
+
+</section>
+
+<script>
+
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+
+e.preventDefault()
+
+fetch("WEBHOOK_URL_HERE",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+name:this.name.value,
+phone:this.phone.value,
+pickup:this.pickup.value,
+dropoff:this.dropoff.value,
+date:this.date.value,
+time:this.time.value,
+car:this.car.value,
+note:this.note.value
+})
+
+})
+
+alert("Booking Sent")
+
+})
+
+</script>
+
+<footer>
+....
+</footer>
+
 <footer id="contact">
 
 <div class="footer-brand">
