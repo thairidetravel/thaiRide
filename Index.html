@@ -1,253 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="/ThaiRide/logo.png">
-<title>ThaiRide Travel | Bangkok Airport Transfer</title>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>ThaiRide Travel | Bangkok Airport Transfer</title>
+    
+    <link rel="icon" type="image/png" href="/ThaiRide/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&family=Prompt:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* 1. รีเซ็ตพื้นฐาน ป้องกันการล้นซ้ายขวา */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* ================= 1. ล็อคขอบจอแบบเด็ดขาด (หัวใจสำคัญ) ================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    overflow-x: hidden; /* ห้ามมีแถบเลื่อนแนวนอน */
+html, body {
     width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden !important; 
+    background: #0f172a; /* สีพื้นหลังเดิมของ ThaiRide */
+    color: #eeeeee;
+    font-family: 'Sarabun', sans-serif;
 }
 
-.container {
+/* ================= 2. NAVBAR ================= */
+.navbar {
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 10px; /* ลด Padding เพื่อเพิ่มพื้นที่ในมือถือ */
-}
-
-/* 2. HEADER - ปรับให้ยืดเต็มและจัดกลางในมือถือ */
-header {
+    background: #1e293b;
+    padding: 15px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #38bdf8;
 }
 
-.logo { display: flex; align-items: center; gap: 8px; }
-.logo img { height: 50px; }
-.logo-text { font-size: 20px; font-weight: bold; color: #38bdf8; }
-
-nav { display: none; } /* ซ่อนเมนูไว้ก่อนถ้าที่แคบ หรือจะเปิดไว้ก็ได้ */
-@media(min-width: 768px) { nav { display: block; } }
-
-/* 3. BANNER - ปรับให้กว้างเต็มจอ */
-.promo-banner {
-    background: #f97316;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 1.5;
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.line-btn {
-    background: #06C755;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 5px;
+.navbar img { 
+    width: 35px; 
 }
 
-/* 4. HERO IMAGE - ปรับให้กว้าง 100% ไม่บีบ */
-.hero img {
+.navbar span {
+    font-family: 'Prompt';
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+/* ================= 3. HERO SLIDER (ภาพไม่ล้นแน่นอน) ================= */
+.hero-container {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    background: #000;
+    overflow: hidden;
+    line-height: 0; 
+}
+
+.slide { 
+    width: 100%; 
+    display: none; 
+}
+
+.slide.active { 
+    display: block; 
+}
+
+.slide img {
+    width: 100%;
+    height: auto; 
     display: block;
 }
 
-/* 5. SEARCH BOX - แก้ไขจุดที่ดูเบี้ยวในรูป */
-.search-container {
+/* ================= 4. CONTAINER & CARDS ================= */
+.container { 
+    padding: 15px; 
+    width: 100%; 
+}
+
+.card {
     background: #1e293b;
     padding: 20px;
     border-radius: 12px;
-    margin: 20px 0;
-    width: 100%;
-}
-
-.search-container input, .search-container select {
-    width: 100%; /* บังคับเต็มความกว้างช่อง */
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: none;
-    font-size: 16px;
-}
-
-.search-btn {
-    width: 100%;
-    background: #f97316;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* 6. SERVICE GRID - แก้ไขให้เรียง 3 ช่องเท่าๆ กัน (จุดที่พังในรูปแรก) */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* แบ่ง 3 ช่องเท่ากันเป๊ะ */
-    gap: 8px;
-    margin: 20px 0;
-}
-
-.service-box {
-    background: #1e293b;
-    padding: 10px 5px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 11px; /* ปรับขนาดฟอนต์ให้พอดีช่อง */
-}
-
-.service-box img { width: 100%; max-width: 60px; margin-bottom: 5px; }
-
-/* 7. STATS & REVIEWS - แก้ไขให้เรียง 2 หรือ 1 ในมือถือ (จุดที่พังในรูปสอง) */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* มือถือให้โชว์ 2 ช่องต่อแถว */
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.stat-item {
-    background: #1e293b;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.review-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* รีวิวให้โชว์แถวละ 1 อันในมือถือเพื่อให้อ่านง่าย */
-    gap: 10px;
-}
-
-/* 8. GALLERY - ปรับให้พอดี */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-}
-.gallery-grid img { width: 100%; border-radius: 5px; }
-
-/* 9. FLOATING BUTTON - ปุ่มไลน์ลอยด้านล่าง */
-.floating-line {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #06C755;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    z-index: 1000;
+    margin-bottom: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+.card h2 { 
+    color: #facc15; 
+    font-family: 'Prompt'; 
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* ปุ่ม LINE */
+.btn-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #06C755;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 100%;
+    font-family: 'Prompt';
+    transition: 0.3s;
+}
+
+/* SEARCH FORM */
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    border-radius: 8px;
+}
+
+.btn-search {
+    width: 100%;
+    padding: 12px;
+    background: #f97316;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: 'Prompt';
+}
+
+/* ================= 5. DASHBOARD (STATS) ================= */
+.dashboard { 
+    display: flex; 
+    gap: 8px; 
+    margin-top: 10px;
+}
+
+.stat-box {
+    flex: 1;
+    background: #1e293b;
+    padding: 12px 5px;
+    border-radius: 10px;
+    text-align: center;
+    border-bottom: 3px solid #38bdf8;
+}
+
+.stat-box span { 
+    font-size: 10px; 
+    color: #888; 
+    display: block; 
+}
+
+.stat-box strong { 
+    font-size: 14px; 
+    color: #fff; 
+}
+
+/* ================= 6. FOOTER ================= */
+footer {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+    border-top: 1px solid #334155;
+}
+
+footer p { 
+    font-size: 14px; 
+    line-height: 1.6; 
+    opacity: 0.8; 
+}
 </style>
 </head>
+
 <body>
 
-<div class="container">
-
-    <header>  
-        <div class="logo">
-            <img src="logo_01.png">
-            <div class="logo-text">ThaiRide Travel</div>
-        </div>
-        <div style="font-size: 11px; color:#facc15;">24/7 Service</div>
-    </header>
-
-    <div class="promo-banner">
-        🚐 Bangkok Airport Transfer Available 24 Hours<br>
-        <a href="https://line.me/R/ti/p/@775hjmvl" class="line-btn">Chat on LINE</a>
+<nav class="navbar">
+    <div class="logo-area">
+        <img src="logo_01.png">
+        <span>ThaiRide Travel</span>
     </div>
+</nav>
 
-    <section class="hero">
-        <img src="heroslide_01.png">
-    </section>
-
-    <div class="search-container">
-        <h3 style="text-align:center; margin-bottom:15px;">Search Bangkok Hotels</h3>
-        <form action="https://www.agoda.com/partners/partnersearch.aspx" method="get" target="_blank">
-            <input type="hidden" name="cid" value="1434592">
-            <input type="text" name="city" value="Bangkok">
-            <input type="date" name="checkIn">
-            <input type="date" name="checkOut">
-            <button type="submit" class="search-btn">Search Hotels</button>
-        </form>
-    </div>
-
-    <div class="services-grid">
-        <div class="service-box">
-            <img src="altis.png">
-            <p>Private Car</p>
-        </div>
-        <div class="service-box">
-            <img src="suv.png">
-            <p>SUV Transfer</p>
-        </div>
-        <div class="service-box">
-            <img src="van.png">
-            <p>VIP Van</p>
-        </div>
-    </div>
-
-    <div class="stats-grid">
-        <div class="stat-item"><h2 style="color:#38bdf8">5000+</h2><p>Happy Users</p></div>
-        <div class="stat-item"><h2 style="color:#38bdf8">120+</h2><p>Tours</p></div>
-        <div class="stat-item"><h2 style="color:#38bdf8">50+</h2><p>Drivers</p></div>
-        <div class="stat-item"><h2 style="color:#38bdf8">4.9★</h2><p>Rating</p></div>
-    </div>
-
-    <div class="review-grid">
-        <div class="stat-item">⭐⭐⭐⭐⭐<br>Excellent service!</div>
-        <div class="stat-item">⭐⭐⭐⭐⭐<br>Very comfortable ride.</div>
-    </div>
-
-    <h3 style="margin: 20px 0 10px;">Gallery</h3>
-    <div class="gallery-grid">
-        <img src="G-01.png"> <img src="G-02.png"> <img src="G-03.png"> <img src="G-04.png">
-    </div>
-
-    <footer style="margin-top:40px; padding:20px; text-align:center; border-top:1px solid #334155;">
-        <p>© 2026 ThaiRide Travel</p>
-    </footer>
-
+<div class="hero-container">
+    <div class="slide active"><img src="heroslide_01.png"></div>
+    <div class="slide"><img src="heroslide_02.png"></div>
+    <div class="slide"><img src="heroslide_03.png"></div>
 </div>
 
-<a href="https://line.me/R/ti/p/@775hjmvl" class="floating-line">
-    Book via LINE
-</a>
+<div class="container">
+    <div class="card" style="border-left: 5px solid #f97316;">
+        <h2>🚐 จองรถรับ-ส่งสนามบิน</h2>
+        <p style="color: #38bdf8; font-weight: bold; margin-bottom: 10px;">Bangkok Airport Transfer 24 Hours</p>
+        <p style="font-size: 14px; color: #ccc;">บริการรถสะอาด คนขับสุภาพ ตรงเวลา ครอบคลุมพื้นที่กรุงเทพฯ และปริมณฑล</p>
+        
+        <a href="https://line.me/R/ti/p/@775hjmvl" class="btn-line">🟢 จองผ่าน LINE (ตอบไวที่สุด)</a>
+    </div>
+
+    <div class="card">
+        <h2>🔍 ค้นหาโรงแรมในกรุงเทพฯ</h2>
+        <div class="search-box">
+            <input type="text" placeholder="จุดหมายปลายทาง" value="Bangkok">
+            <div style="display:flex; gap:10px;">
+                <input type="date" placeholder="เช็คอิน">
+                <input type="date" placeholder="เช็คเอาท์">
+            </div>
+            <button class="btn-search">ค้นหาโรงแรม Agoda</button>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="stat-box"><span>Happy Users</span><strong>5,000+</strong></div>
+        <div class="stat-box"><span>Available Cars</span><strong>50+</strong></div>
+        <div class="stat-box"><span>Rating</span><strong>4.9★</strong></div>
+    </div>
+</div>
+
+<footer>
+    <img src="logo_01.png" style="width:60px; margin-bottom:15px;"><br>
+    <p>
+        <strong>ThaiRide Travel</strong><br>
+        บริการรถรับส่งสนามบินและนำเที่ยวทั่วไทย<br>
+        เปิดบริการ 24 ชั่วโมง ทุกวัน
+    </p>
+    <div style="margin-top:15px; font-size: 12px; opacity: 0.5;">
+        © 2026 ThaiRide Travel. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+    // ระบบสไลด์ภาพ (เหมือนของ Bangkhenchurch)
+    let cur = 0;
+    const slides = document.querySelectorAll('.slide');
+    if(slides.length > 1) {
+        setInterval(() => {
+            slides[cur].classList.remove('active');
+            cur = (cur + 1) % slides.length;
+            slides[cur].classList.add('active');
+        }, 4000);
+    }
+</script>
 
 </body>
 </html>
