@@ -1,852 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/ThaiRide/logo.png">
+    <link rel="shortcut icon" href="/ThaiRide/logo.png">
+    <link rel="apple-touch-icon" href="/ThaiRide/logo.png">
+    <title>ThaiRide Travel | Bangkok Airport Transfer</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" href="/ThaiRide/logo.png">
-<link rel="shortcut icon" href="/ThaiRide/logo.png">
-<link rel="apple-touch-icon" href="/ThaiRide/logo.png">
-<title>ThaiRide Travel | Bangkok Airport Transfer</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V9XCVN1N0W');
+    </script>
 
-<!-- Google tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
+    <style>
+        /* รีเซ็ตพื้นฐานเพื่อไม่ให้ล้นจอ */
+        * {
+            box-sizing: border-box;
+        }
 
-<!-- Statcounter -->
-<script type="text/javascript">
-var sc_project=13209398; 
-var sc_invisible=1; 
-var sc_security="e5f7109c"; 
-</script>
-<script src="https://www.statcounter.com/counter/counter.js" async></script>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            overflow-x: hidden; /* ป้องกันการเลื่อนซ้ายขวาที่ไม่ได้ตั้งใจ */
+        }
 
-<style>
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px;
+            width: 100%;
+        }
 
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-}
+        /* HEADER */
+        header {
+            display: flex;
+            flex-direction: column; /* มือถือเรียงลงล่าง */
+            align-items: center;
+            gap: 15px;
+        }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
+        @media(min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
 
-/* HEADER */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo img { height: 60px; }
+        .logo-text { font-size: 24px; font-weight: bold; color: #38bdf8; }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-}
+        /* ADS */
+        .ad { text-align: center; margin: 20px 0; }
+        .ad img { max-width: 100%; height: auto; border-radius: 8px; }
 
-.logo img{height:75px;}
+        /* HERO */
+        .hero { position: relative; width: 100%; }
+        .hero img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: none;
+        }
+        .hero img.active { display: block; }
 
-.logo-text{
-font-size:28px;
-font-weight:bold;
-color:#38bdf8;
-}
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .hero-text h1 { font-size: 22px; margin: 0; }
 
-.clock{
-font-size:16px;
-font-weight:bold;
-color:#facc15;
-}
+        @media(min-width: 768px) {
+            .hero-text { left: 50px; }
+            .hero-text h1 { font-size: 40px; }
+        }
 
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-}
+        /* SERVICES & VEHICLES */
+        .services, .vehicle-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* มือถือ 1 คอลัมน์ */
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-/* ADS */
-.ad{
-text-align:center;
-margin:25px 0;
-}
-.ad img{
-max-width:100%;
-height:auto;
-}
-/* AGODA SEARCH */
+        @media(min-width: 600px) {
+            .services, .vehicle-grid { grid-template-columns: repeat(3, 1fr); }
+        }
 
-.agoda-search input{
-padding:12px;
-border-radius:6px;
-border:none;
-margin:5px;
-font-size:15px;
-}
+        .service-box, .vehicle {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .service-box img, .vehicle img { width: 100%; max-width: 150px; }
 
-.agoda-search button{
-background:#f97316;
-color:white;
-padding:12px 24px;
-border:none;
-border-radius:6px;
-font-weight:bold;
-cursor:pointer;
-}
-/* HERO */
+        /* TOUR SLIDER */
+        .tour-track {
+            display: flex;
+            overflow-x: auto; /* ให้เลื่อนสไลด์ด้วยนิ้วได้ในมือถือ */
+            gap: 15px;
+            padding-bottom: 10px;
+        }
+        .tour {
+            min-width: 80%; /* เห็นภาพถัดไปนิดหน่อย */
+            flex-shrink: 0;
+        }
+        @media(min-width: 768px) {
+            .tour { min-width: 45%; }
+        }
+        .tour img { width: 100%; border-radius: 10px; }
 
-.hero{position:relative;}
+        /* GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        @media(min-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .gallery-grid img { width: 100%; border-radius: 6px; }
 
-.hero img{
-width:100%;
-border-radius:10px;
-display:none;
-}
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        @media(min-width: 768px) {
+            .stats { grid-template-columns: repeat(4, 1fr); }
+        }
+        .stat { background: #1e293b; padding: 15px; border-radius: 10px; text-align: center; }
+        .stat h2 { font-size: 24px; color: #38bdf8; margin: 5px 0; }
 
-.hero img.active{display:block;}
+        /* BOOKING FORM */
+        #thairide-booking {
+            background: #000;
+            padding: 40px 15px;
+            margin-top: 30px;
+            border-radius: 15px;
+        }
+        .booking-container {
+            max-width: 800px;
+            margin: auto;
+            border: 2px solid #00ff9d;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 20px #00ff9d33;
+        }
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* มือถือ 1 คอลัมน์ */
+            gap: 10px;
+        }
+        @media(min-width: 768px) {
+            .booking-grid { grid-template-columns: 1fr 1fr; }
+            .booking-grid-full, .submit-btn { grid-column: span 2; }
+        }
+        .booking-container input, .booking-container select, .booking-container textarea {
+            width: 100%;
+            padding: 12px;
+            background: #111;
+            border: 1px solid #00ff9d;
+            border-radius: 6px;
+            color: #fff;
+        }
+        .submit-btn {
+            background: #00ff9d;
+            color: #000;
+            padding: 15px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
 
-.hero-text{
-position:absolute;
-top:35%;
-left:50px;
-}
+        /* QR CODE */
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .qr-grid img { width: 100%; max-width: 100px; }
+        .qr-grid p { font-size: 12px; }
 
-.hero-text h1{font-size:40px;}
+        /* CHAT WIDGET */
+        .chat-widget { position: fixed; right: 15px; bottom: 15px; z-index: 1000; }
+        .chat-main { background: #2563eb; padding: 12px 18px; border-radius: 25px; cursor: pointer; }
 
-.book-btn{
-background:#f97316;
-padding:12px 26px;
-border-radius:6px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-}
-
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.service-box{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-text-align:center;
-}
-
-.service-box img{width:60px;}
-
-/* VEHICLE */
-
-.vehicle-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:20px;
-}
-
-.vehicle{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-text-align:center;
-}
-
-.vehicle img{width:100%;}
-
-/* TOUR */
-
-.tour-slider{
-overflow:hidden;
-position:relative;
-}
-
-.tour-track{
-display:flex;
-transition:transform .6s ease;
-}
-
-.tour{
-min-width:50%;
-padding:10px;
-}
-
-.tour img{
-width:100%;
-border-radius:10px;
-}
-
-/* GALLERY */
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-margin-top:20px;
-}
-
-.gallery-grid img{
-width:100%;
-border-radius:6px;
-}
-
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-top:40px;
-text-align:center;
-}
-
-.stat{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
-
-.stat h2{
-font-size:34px;
-color:#38bdf8;
-}
-
-/* REVIEWS */
-
-.review-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:20px;
-}
-
-.review{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
-
-/* QR */
-
-.qr-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:30px;
-text-align:center;
-}
-
-.qr-grid img{width:120px;}
-
-/* CHAT */
-
-.chat-widget{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:9999;
-}
-
-.chat-main{
-background:#2563eb;
-color:white;
-padding:14px 20px;
-border-radius:30px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.chat-menu{
-display:none;
-flex-direction:column;
-gap:10px;
-margin-bottom:10px;
-}
-
-.chat-menu a{
-display:flex;
-align-items:center;
-gap:10px;
-padding:10px 14px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-.line-chat{background:#06C755;}
-.whatsapp-chat{background:#25D366;}
-
-</style>
-
+    </style>
 </head>
 
 <body>
 
 <div class="container">
 
-<header>
+    <header>
+        <div class="logo">
+            <img src="logo_01.png" alt="ThaiRide Logo">
+            <div class="logo-text">ThaiRide Travel</div>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Tours</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-<div class="logo">
-<img src="logo_01.png">
-<div class="logo-text">ThaiRide Travel</div>
-</div>
+    <div style="background:#f97316; padding:15px; margin:20px 0; border-radius:8px; text-align:center; font-weight:bold;">
+        🚐 Bangkok Airport Transfer 24 Hours  
+        <div style="margin-top:10px;">
+            <a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" style="background:#06C755; color:white; padding:8px 16px; border-radius:5px; text-decoration:none;">
+                Chat on LINE
+            </a>
+        </div>
+    </div>
 
-<div class="clock" id="clock"></div>
+    <section class="hero">
+        <img src="heroslide_01.png" class="active">
+        <div class="hero-text">
+            <h1>Reliable Transfer<br>in Bangkok</h1>
+        </div>
+    </section>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Tours</a>
-<a href="#">Gallery</a>
-<a href="#">Contact</a>
-</nav>
+    <div style="background:#1e293b; padding:20px; border-radius:10px; margin:20px 0; text-align:center;">
+        <h3>Search Bangkok Hotels</h3>
+        <form action="https://www.agoda.com/partners/partnersearch.aspx" method="get" target="_blank">
+            <input type="hidden" name="cid" value="1434592">
+            <input type="text" name="city" value="Bangkok" style="width:100%; margin-bottom:10px; padding:10px; border-radius:5px; border:none;">
+            <div style="display:flex; gap:5px; margin-bottom:10px;">
+                <input type="date" name="checkIn" style="width:50%; padding:10px; border-radius:5px; border:none;">
+                <input type="date" name="checkOut" style="width:50%; padding:10px; border-radius:5px; border:none;">
+            </div>
+            <button type="submit" style="width:100%; background:#f97316; color:white; padding:12px; border:none; border-radius:5px; font-weight:bold;">Search Hotels</button>
+        </form>
+    </div>
 
-</header>
-<div style="
-background:#f97316;
-padding:14px;
-margin:20px 0;
-border-radius:8px;
-text-align:center;
-font-weight:bold;
-font-size:18px;
-">
+    <section class="services">
+        <div class="service-box">
+            <img src="altis.png">
+            <h3>Private Sedan</h3>
+        </div>
+        <div class="service-box">
+            <img src="suv.png">
+            <h3>Family SUV</h3>
+        </div>
+        <div class="service-box">
+            <img src="van.png">
+            <h3>VIP Van</h3>
+        </div>
+    </section>
 
-🚐 Bangkok Airport Transfer Available 24 Hours  
+    <h2 style="text-align:center; margin-top:30px;">Our Vehicles</h2>
+    <div class="vehicle-grid">
+        <div class="vehicle">
+            <img src="altis.png">
+            <h3>Sedan (1-3 Pax)</h3>
+        </div>
+        <div class="vehicle">
+            <img src="suv.png">
+            <h3>SUV (1-4 Pax)</h3>
+        </div>
+        <div class="vehicle">
+            <img src="van.png">
+            <h3>VIP Van (1-10 Pax)</h3>
+        </div>
+    </div>
 
-<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" style="
-background:#06C755;
-color:white;
-padding:8px 16px;
-border-radius:5px;
-text-decoration:none;
-margin-left:10px;
-">
+    <h2>Popular Tours</h2>
+    <div class="tour-track">
+        <div class="tour"><img src="G-01.png"><h3>Safari World</h3></div>
+        <div class="tour"><img src="G-02.png"><h3>Floating Market</h3></div>
+        <div class="tour"><img src="G-03.png"><h3>Ayutthaya</h3></div>
+    </div>
 
-Chat on LINE
+    <div class="stats">
+        <div class="stat"><h2>5000+</h2><p>Customers</p></div>
+        <div class="stat"><h2>120+</h2><p>Tours</p></div>
+        <div class="stat"><h2>50+</h2><p>Drivers</p></div>
+        <div class="stat"><h2>4.9★</h2><p>Rating</p></div>
+    </div>
 
-</a>
+    <section id="thairide-booking">
+        <div class="booking-container">
+            <div style="text-align:center; font-size:24px; color:#00ff9d; margin-bottom:20px;">Airport Transfer Booking</div>
+            <form id="thairideForm">
+                <div class="booking-grid">
+                    <input type="text" name="firstname" placeholder="First Name" required>
+                    <input type="text" name="lastname" placeholder="Last Name" required>
+                    <input type="tel" name="phone" placeholder="WhatsApp / LINE" required>
+                    <input type="text" name="pickup" placeholder="Pickup (Airport/Hotel)" required>
+                    <input type="text" name="dropoff" placeholder="Drop-off Location" required>
+                    <select name="car_type">
+                        <option value="">Select Car Type</option>
+                        <option>Sedan (1-3 pax)</option>
+                        <option>SUV (1-4 pax)</option>
+                        <option>VIP Van (1-10 pax)</option>
+                    </select>
+                    <input type="date" name="date">
+                    <input type="time" name="time">
+                    <textarea name="note" placeholder="Special Request" class="booking-grid-full"></textarea>
+                    <button class="submit-btn">BOOK NOW</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-</div>
-<!-- AD 1 Agoda -->
+    <h2 style="text-align:center; margin-top:30px;">Contact Us</h2>
+    <div class="qr-grid">
+        <div><img src="line-qr.png"><p>LINE</p></div>
+        <div><img src="wechat-qr.png"><p>WeChat</p></div>
+        <div><img src="whatsapp-qr.png"><p>WhatsApp</p></div>
+    </div>
 
-<div class="ad">
-<a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1434592" target="_blank">
-<img src="https://dummyimage.com/728x90/ff6600/ffffff&text=Book+Hotels+Worldwide+on+Agoda">
-</a>
-</div>
-
-<section class="hero">
-
-<img src="heroslide_01.png" class="active">
-<img src="heroslide_02.png">
-<img src="heroslide_03.png">
-<img src="heroslide_04.png">
-<img src="heroslide_05.png">
-<img src="heroslide_06.png">
-<img src="heroslide_07.png">
-<img src="heroslide_08.png">
-<img src="heroslide_09.png">
-<img src="heroslide_10.png">
-
-
-
-</section>
-<div style="
-background:#f97316;
-padding:14px;
-margin:20px 0;
-border-radius:8px;
-text-align:center;
-font-weight:bold;
-font-size:18px;
-">
-
-🚐 Bangkok Airport Transfer Available 24 Hours  
-
-<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" style="
-background:#06C755;
-color:white;
-padding:8px 16px;
-border-radius:5px;
-text-decoration:none;
-margin-left:10px;
-">
-
-Chat on LINE
-
-</a>
-
-</div>
-<!-- AGODA HOTEL SEARCH -->
-
-<div style="background:#1e293b;padding:20px;border-radius:10px;margin:30px 0;text-align:center;">
-
-<h2 style="margin-bottom:15px;">Search Bangkok Hotels</h2>
-
-<form action="https://www.agoda.com/partners/partnersearch.aspx" method="get" target="_blank">
-
-<input type="hidden" name="cid" value="1434592">
-<input type="hidden" name="pcs" value="1">
-
-<input 
-type="text" 
-name="city" 
-value="Bangkok"
-style="width:90%;max-width:200px;padding:10px;border-radius:6px;border:none;margin:5px;">
-
-<input 
-type="date" 
-name="checkIn"
-style="width:90%;max-width:150px;padding:10px;border-radius:6px;border:none;margin:5px;">
-
-<input 
-type="date" 
-name="checkOut"
-style="width:90%;max-width:150px;padding:10px;border-radius:6px;border:none;margin:5px;">
-
-<button
-type="submit"
-style="background:#f97316;color:white;padding:10px 20px;border:none;border-radius:6px;font-weight:bold;margin-top:8px;cursor:pointer;">
-
-Search Hotels
-
-</button>
-
-</form>
+    <footer style="margin-top:40px; padding:20px; text-align:center; border-top:1px solid #1e293b;">
+        <img src="logo_01.png" height="50"><br>
+        <p>© 2026 ThaiRide Travel</p>
+    </footer>
 
 </div>
-
-<section class="services">
-
-<div class="service-box">
-<img src="altis.png">
-<h3>Private Car</h3>
-</div>
-
-<div class="service-box">
-<img src="suv.png">
-<h3>SUV Transfer</h3>
-</div>
-
-<div class="service-box">
-<img src="van.png">
-<h3>VIP Van</h3>
-</div>
-
-</section>
-
-<h2 style="margin-top:40px">Vehicle Types</h2>
-
-<div class="vehicle-grid">
-
-<div class="vehicle">
-<img src="altis.png">
-<h3>Sedan</h3>
-</div>
-
-<div class="vehicle">
-<img src="suv.png">
-<h3>SUV</h3>
-</div>
-
-<div class="vehicle">
-<img src="van.png">
-<h3>VIP Van</h3>
-</div>
-
-</div>
-
-<!-- AD 2 Agoda -->
-
-<div class="ad">
-<a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1434592" target="_blank">
-<img src="https://dummyimage.com/728x90/ff6600/ffffff&text=Best+Hotel+Deals+on+Agoda">
-</a>
-</div>
-
-<h2>Popular Tours</h2>
-
-<div class="tour-slider">
-
-<div class="tour-track" id="tourTrack">
-
-<div class="tour">
-<img src="G-01.png">
-<h3>Safari World Tour</h3>
-</div>
-
-<div class="tour">
-<img src="G-02.png">
-<h3>Floating Market</h3>
-</div>
-
-<div class="tour">
-<img src="G-03.png">
-<h3>Ayutthaya Tour</h3>
-</div>
-
-<div class="tour">
-<img src="G-04.png">
-<h3>Pattaya Tour</h3>
-</div>
-
-</div>
-
-</div>
-
-<h2 style="margin-top:40px">Travel Gallery</h2>
-
-<div class="gallery-grid">
-
-<img src="G-01.png">
-<img src="G-02.png">
-<img src="G-03.png">
-<img src="G-04.png">
-
-<img src="G-01.png">
-<img src="G-02.png">
-<img src="G-03.png">
-<img src="G-04.png">
-
-</div>
-
-<!-- LIVE VISITOR -->
-
-<div style="text-align:center;margin:40px 0">
-
-<h2>🌎 Live Visitors</h2>
-
-<script id="_wautnh">
-var _wau = _wau || [];
-_wau.push(["dynamic", "vhzzo69l0r", "tnh", "3c78d8c4302b", "small"]);
-</script>
-
-<script async src="//waust.at/d.js"></script>
-
-</div>
-
-<!-- WORLD MAP -->
-
-<div style="text-align:center;margin:40px 0">
-
-<h2>🌍 Visitors Around The World</h2>
-
-<a href="https://info.flagcounter.com/g1bq">
-<img src="https://s01.flagcounter.com/count2/g1bq/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_250/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" border="0">
-</a>
-
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h2 class="counter" data-target="5000">0</h2>
-<p>Happy Customers</p>
-</div>
-
-<div class="stat">
-<h2 class="counter" data-target="120">0</h2>
-<p>Tours</p>
-</div>
-
-<div class="stat">
-<h2 class="counter" data-target="50">0</h2>
-<p>Drivers</p>
-</div>
-
-<div class="stat">
-<h2>4.9★</h2>
-<p>Rating</p>
-</div>
-
-</div>
-
-<!-- ONLINE -->
-
-<div style="text-align:center;font-size:20px;margin-top:20px">
-📈 Online Now : <span id="onlineCount">3</span>
-</div>
-
-<h2 style="margin-top:40px">Customer Reviews</h2>
-
-<div class="review-grid">
-
-<div class="review">Excellent service ⭐⭐⭐⭐⭐</div>
-<div class="review">Very comfortable ride ⭐⭐⭐⭐⭐</div>
-<div class="review">Highly recommended ⭐⭐⭐⭐⭐</div>
-
-</div>
-
-<h2 style="margin-top:40px">Contact Us</h2>
-
-<div class="qr-grid">
-
-<div>
-<img src="line-qr.png">
-<p>LINE OA</p>
-</div>
-
-<div>
-<img src="wechat-qr.png">
-<p>WeChat</p>
-</div>
-
-<div>
-<img src="whatsapp-qr.png">
-<p>WhatsApp</p>
-</div>
-
-</div>
-
-<!-- AD 3 Agoda -->
-
-<div class="ad">
-<a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1434592" target="_blank">
-<img src="https://dummyimage.com/728x90/ff6600/ffffff&text=Find+Hotels+Worldwide+Agoda">
-</a>
-</div>
-
-<section id="thairide-booking">
-
-<style>
-
-#thairide-booking{
-background:#000;
-padding:60px 20px;
-font-family:Arial, sans-serif;
-}
-
-.booking-container{
-
-max-width:800px;
-margin:auto;
-border:2px solid #00ff9d;
-border-radius:12px;
-padding:35px;
-box-shadow:0 0 20px #00ff9d33;
-color:#fff;
-
-}
-
-.booking-title{
-
-text-align:center;
-font-size:28px;
-margin-bottom:30px;
-color:#00ff9d;
-letter-spacing:1px;
-
-}
-
-.booking-grid{
-
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-
-}
-
-.booking-grid-full{
-
-grid-column:1 / 3;
-
-}
-
-.booking-container input,
-.booking-container select,
-.booking-container textarea{
-
-width:100%;
-padding:12px;
-background:#111;
-border:1px solid #00ff9d;
-border-radius:6px;
-color:#fff;
-font-size:15px;
-
-}
-
-.booking-container textarea{
-height:110px;
-resize:none;
-}
-
-.booking-container input:focus,
-.booking-container select:focus,
-.booking-container textarea:focus{
-
-outline:none;
-border-color:#00ffaa;
-box-shadow:0 0 6px #00ffaa;
-
-}
-
-.submit-btn{
-
-grid-column:1 / 3;
-padding:16px;
-background:#00ff9d;
-border:none;
-font-size:18px;
-font-weight:bold;
-color:#000;
-border-radius:6px;
-cursor:pointer;
-
-}
-
-.submit-btn:hover{
-
-background:#00cc7a;
-
-}
-
-@media(max-width:700px){
-
-.booking-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.booking-grid-full{
-grid-column:1;
-}
-
-.submit-btn{
-grid-column:1;
-}
-
-}
-
-</style>
-
-
-<div class="booking-container">
-
-<div class="booking-title">
-Airport Transfer Booking
-</div>
-
-<form id="thairideForm">
-
-<div class="booking-grid">
-
-<input type="text" name="firstname" placeholder="First Name" required>
-
-<input type="text" name="lastname" placeholder="Last Name" required>
-
-<input type="tel" name="phone" placeholder="Phone Number (WhatsApp / LINE)" required>
-
-<input type="text" name="pickup" placeholder="Pickup Location (Airport / Hotel)" required>
-
-<input type="text" name="room" placeholder="Room Number (Hotel only)">
-
-<input type="text" name="dropoff" placeholder="Drop-off Location" required>
-
-<input type="number" name="passengers" placeholder="Passengers">
-
-<input type="number" name="bags_large" placeholder="Large Luggage">
-
-<input type="number" name="bags_medium" placeholder="Medium Luggage">
-
-<input type="number" name="bags_small" placeholder="Small Luggage">
-
-<select name="car_type" class="booking-grid-full">
-
-<option value="">Select Car Type</option>
-<option>Sedan (1-3 pax)</option>
-<option>SUV (1-4 pax)</option>
-<option>VIP Van (1-10 pax)</option>
-<option>Luxury Car</option>
-
-</select>
-
-<input type="date" name="date">
-
-<input type="time" name="time">
-
-<textarea name="note" placeholder="Special Request / Note" class="booking-grid-full"></textarea>
-
-<button class="submit-btn">BOOK TRANSFER</button>
-
-</div>
-
-</form>
-
-</div>
-
 
 <script>
-
-document.getElementById("thairideForm").addEventListener("submit",function(e){
-
-e.preventDefault()
-
-const data = Object.fromEntries(new FormData(this).entries())
-
-fetch("https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco",{
-
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(data)
-
-})
-
-.then(()=>{
-
-alert("Booking Sent Successfully")
-document.getElementById("thairideForm").reset()
-
-})
-
-.catch(()=>{
-
-alert("Error sending booking")
-
-})
-
-})
-
+    // Booking Form Submission
+    document.getElementById("thairideForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(this).entries());
+        fetch("https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        })
+        .then(() => {
+            alert("Booking Sent Successfully!");
+            this.reset();
+        })
+        .catch(() => alert("Error sending booking"));
+    });
 </script>
-
-</section>
-
-
-<footer style="margin-top:60px;text-align:center">
-
-<img src="logo_01.png" height="70"><br><br>
-
-Contact ThaiRide Travel
-
-<br><br>
-
-© 2026 ThaiRide Travel
-
-</footer>
-
-</div>
 
 </body>
 </html>
-
-<!--
