@@ -1,261 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ThaiRide Travel - Private Transfer Thailand</title>
-
-<meta name="description" content="Private airport transfer in Bangkok. Book sedan, SUV or VIP van with ThaiRide Travel.">
-
-<link rel="icon" href="/ThaiRide/logo.png">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>ThaiRide Travel | New Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&family=Prompt:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
---main:#00ff9d;
---dark:#0f172a;
---card:#1e293b;
+/* ================= 1. ล็อคขอบจอแบบเด็ดขาด (Style จาก BBC) ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-margin:0;
-font-family:Arial;
-background:var(--dark);
-color:white;
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important; 
+  background: #121212; /* เปลี่ยนเป็นพื้นหลังดำโทน BBC */
+  color: #eeeeee;
+  font-family: 'Sarabun', sans-serif;
 }
 
-/* HEADER */
-header{
-position:sticky;
-top:0;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 5%;
-z-index:1000;
+/* ================= 2. NAVBAR (สไตล์ BBC) ================= */
+.nav-bar {
+  width: 100%;
+  background: #0a2c6d; /* สีน้ำเงินเข้ม BBC */
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-header h2{
-color:var(--main);
-margin:0;
+.brand { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  font-family: 'Prompt'; 
+  font-weight: 600; 
+  color: #ffffff; 
+  font-size: 1.1rem; 
 }
 
-nav a{
-margin-left:20px;
-color:white;
-text-decoration:none;
+/* ================= 3. HERO (ล็อครูปไม่ให้ล้น) ================= */
+.hero-box {
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+  line-height: 0;
 }
 
-nav a:hover{
-color:var(--main);
+.hero-box img {
+  width: 100%;
+  height: auto; 
+  display: block;
 }
 
-/* HERO */
-.hero{
-height:80vh;
-background:url('heroslide_01.png') center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+/* ================= 4. CONTENT AREA (สไตล์ BBC) ================= */
+.container {
+  padding: 15px;
+  width: 100%;
 }
 
-.hero h1{
-font-size:3rem;
-margin:0;
+.card {
+  background: #1e1e1e; /* สีการ์ดเทาเข้ม BBC */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.hero p{
-margin:10px 0;
+.card h2 { 
+  color: #4dabff; /* สีฟ้าสว่าง BBC */
+  font-family: 'Prompt'; 
+  margin-bottom: 10px; 
 }
 
-.btn{
-background:var(--main);
-padding:12px 25px;
-color:black;
-text-decoration:none;
-border-radius:8px;
-display:inline-block;
-margin-top:15px;
+/* ================= 5. CAR GRID & BUTTON (ข้อมูล ThaiRide) ================= */
+.car-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px; 
+  margin-top: 20px; 
 }
 
-/* SECTION */
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
+.car-item { 
+  background: #2a2a2a; 
+  padding: 12px 5px; 
+  border-radius: 10px; 
+  text-align: center; 
+  border-bottom: 3px solid #0a2c6d; /* เส้นใต้สไตล์ Stat Box BBC */
 }
 
-.card{
-background:var(--card);
-padding:25px;
-border-radius:12px;
-margin-bottom:20px;
+.car-item img { 
+  width: 100%; 
+  max-width: 60px; 
+  height: auto; 
 }
 
-/* FORM */
-input,select{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-background:#111;
-border:1px solid #333;
-color:white;
-border-radius:8px;
+.btn-line { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: #2e7d32; /* สีเขียวปุ่ม BBC */
+  color: #fff; 
+  text-decoration: none; 
+  padding: 15px; 
+  border-radius: 8px; 
+  font-family: 'Prompt'; 
+  font-weight: bold; 
+  width: 100%; 
+  margin-top: 20px; 
 }
 
-button{
-width:100%;
-padding:15px;
-background:var(--main);
-border:none;
-font-weight:bold;
-border-radius:8px;
-cursor:pointer;
+/* ================= 6. FOOTER ================= */
+footer {
+  background: #0a2c6d;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
 }
-
-/* CONTACT */
-.contact{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.contact a{
-background:var(--card);
-padding:20px;
-text-align:center;
-border-radius:12px;
-text-decoration:none;
-color:white;
-}
-
-/* FLOAT LINE */
-.line-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#00c300;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-background:#020617;
-margin-top:40px;
-}
-
 </style>
 </head>
 
 <body>
 
-<header>
-<h2>ThaiRide</h2>
-<nav>
-<a href="index.html">Home</a>
-<a href="airport-transfer.html">Airport Transfer</a>
-<a href="#booking">Booking</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+    <nav class="nav-bar">
+        <div class="brand">ThaiRide Travel</div>
+    </nav>
 
-<section class="hero">
-<div>
-<h1>Welcome to Thailand</h1>
-<p>Private Car • Airport Transfer • VIP Service</p>
-<a href="#booking" class="btn">Book Now</a>
-</div>
-</section>
+    <div class="hero-box">
+        <img src="heroslide_01.png">
+    </div>
 
-<div class="container">
+    <div class="container">
+        <div class="card">
+            <h2>🚐 รับ-ส่งสนามบิน 24 ชม.</h2>
+            <p style="color:#aaa;">บริการรถส่วนตัว ราคามาตรฐาน ปลอดภัย ตรงเวลา</p>
+            
+            <div class="car-grid">
+                <div class="car-item"><img src="altis.png"></div>
+                <div class="car-item"><img src="suv.png"></div>
+                <div class="car-item"><img src="van.png"></div>
+            </div>
 
-<h2>Our Services</h2>
-<div class="card">
-<p>
-We provide professional transportation across Thailand: 
-<strong>Airport Transfer, Private Car, SUV, and VIP Van</strong>.
-</p>
-</div>
+            <a href="https://line.me/R/ti/p/@775hjmvl" class="btn-line">🟢 จองผ่าน LINE</a>
+        </div>
+    </div>
 
-<h2 id="booking">Book Your Ride</h2>
-
-<form>
-<input type="text" id="name" placeholder="Full Name" required>
-<input type="text" id="contact" placeholder="Phone / Email" required>
-<input type="text" id="pickup" placeholder="Pickup Location" required>
-<input type="text" id="dropoff" placeholder="Drop-off Location">
-
-<input type="date" id="date">
-<input type="time" id="time">
-
-<select id="vehicle">
-<option>Car</option>
-<option>SUV</option>
-<option>Van</option>
-</select>
-
-<button type="button" onclick="sendBooking()">BOOK VIA LINE</button>
-</form>
-
-<h2 id="contact">Contact</h2>
-
-<div class="contact">
-<a href="https://line.me/ti/p/@thairide">
-<i class="fab fa-line"></i><br>LINE<br>@thairide
-</a>
-
-<a href="https://wa.me/YOUR_NUMBER">
-<i class="fab fa-whatsapp"></i><br>WhatsApp
-</a>
-
-<div>
-<i class="fab fa-weixin"></i><br>WeChat<br>thairide_travel
-</div>
-</div>
-
-</div>
-
-<a class="line-float" href="https://line.me/ti/p/@thairide">
-💬 LINE NOW
-</a>
-
-<footer>
-© ThaiRide Travel
-</footer>
-
-<script>
-function sendBooking(){
-let name = document.getElementById("name").value;
-let contact = document.getElementById("contact").value;
-let pickup = document.getElementById("pickup").value;
-let dropoff = document.getElementById("dropoff").value;
-let date = document.getElementById("date").value;
-let time = document.getElementById("time").value;
-let vehicle = document.getElementById("vehicle").value;
-
-let msg = `New Booking
-Name: ${name}
-Contact: ${contact}
-Pickup: ${pickup}
-Dropoff: ${dropoff}
-Date: ${date}
-Time: ${time}
-Vehicle: ${vehicle}`;
-
-window.open("https://line.me/R/msg/text/?" + encodeURIComponent(msg));
-}
-</script>
+    <footer>
+        <strong>© 2026 ThaiRide Travel</strong>
+        <p style="margin-top:10px; font-size: 13px; opacity: 0.8;">
+            บริการรถเช่าพร้อมคนขับ ทั่วไทย
+        </p>
+    </footer>
 
 </body>
 </html>
