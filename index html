@@ -3,53 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>ThaiRide Travel | รถตู้ SUV Sedan รับส่งสนามบิน เที่ยวทั่วไทย</title>
-    <meta name="description" content="บริการรถรับจ้าง รถตู้ VIP, SUV, Sedan รับส่งสนามบินสุวรรณภูมิ ดอนเมือง และพาเที่ยวทั่วไทย บริการสุภาพ ปลอดภัย 24 ชม.">
-    <meta name="keywords" content="รถรับจ้าง, รถตู้สนามบิน, รถ SUV รับจ้าง, รถเช่าพร้อมคนขับ, รับส่งสนามบิน, ThaiRide Travel">
-    <meta name="author" content="ThaiRide Travel">
+    <title>ThaiRide Travel | บริการรถรับส่งสนามบิน และนำเที่ยวทั่วไทย</title>
+    <meta name="description" content="ThaiRide Travel บริการรถตู้ VIP, SUV, Sedan รับส่งสนามบินสุวรรณภูมิ ดอนเมือง และบริการนำเที่ยวทั่วประเทศไทย มั่นใจ ปลอดภัย บริการ 24 ชม.">
+    <meta name="keywords" content="รถรับจ้าง, รถตู้ VIP, รถ SUV, รับส่งสนามบิน, เที่ยวไทย, ThaiRide Travel, จองรถล่วงหน้า">
     
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <img src="https://via.placeholder.com/50" alt="Logo"> <strong style="font-family: 'Prompt'; font-size: 1.2rem;">ThaiRide Travel</strong>
+        <img src="https://via.placeholder.com/50" alt="ThaiRide Travel Logo">
+        <h1 style="font-family: 'Prompt'; font-size: 1.2rem;">ThaiRide Travel</h1>
     </nav>
 
-    <section class="hero-container">
+    <header class="hero-container">
         <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200" alt="บริการรถตู้ VIP">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200" alt="รถตู้ VIP นำเที่ยว">
         </div>
-        </section>
+        </header>
 
     <main class="container">
         
-        <article class="card">
-            <h2>บริการของเรา</h2>
-            <p>ยินดีต้อนรับสู่ **ThaiRide Travel** เราให้บริการรถรับส่งที่ครอบคลุมทุกความต้องการของคุณ</p>
+        <section class="card">
+            <h2>บริการของเรา (Our Services)</h2>
+            <p>ThaiRide Travel พร้อมให้บริการรถรับส่งส่วนตัว ครอบคลุมทุกความต้องการ</p>
             <ul style="margin-top: 15px; list-style: none;">
-                <li>✅ <strong>รถตู้ VIP:</strong> สำหรับกรุ๊ปสัมมนาหรือครอบครัว</li>
-                <li>✅ <strong>รถ SUV / Sedan:</strong> รับส่งสนามบินแบบส่วนตัว</li>
-                <li>✅ <strong>นำเที่ยว:</strong> บริการพาเที่ยวทั่วไทยตามแผนของคุณ</li>
+                <li>✅ <strong>VIP Van:</strong> รถตู้ 9-10 ที่นั่ง เบาะนุ่ม นั่งสบาย</li>
+                <li>✅ <strong>SUV & Sedan:</strong> สำหรับเดินทางแบบส่วนตัวหรือครอบครัว</li>
+                <li>✅ <strong>Airport Transfer:</strong> รับ-ส่ง สุวรรณภูมิ และ ดอนเมือง 24 ชม.</li>
+                <li>✅ <strong>Sightseeing:</strong> พาเที่ยวทะเล ภูเขา วัดวาอาราม ทั่วไทย</li>
             </ul>
-        </article>
+        </section>
 
-        <article class="card">
-            <h2>จองรถง่ายๆ ผ่าน LINE</h2>
-            <p>สอบถามเช็คราคา หรือจองคิวรถล่วงหน้าได้ตลอด 24 ชั่วโมง</p>
-            <a href="https://lin.ee/77ixmf5" target="_blank" style="text-decoration: none;">
-                <button style="background: #06C755;">📱 ติดต่อเราทาง LINE</button>
+        <section class="card">
+            <h2>ทำไมต้องเลือก ThaiRide Travel?</h2>
+            <p>คนขับมืออาชีพ ชำนาญเส้นทาง รถสะอาด และตรงเวลา คือหัวใจสำคัญของเรา</p>
+            <a href="https://lin.ee/77ixmf5" target="_blank">
+                <button style="background: #00b900;">สอบถาม/จองรถผ่าน LINE</button>
             </a>
-        </article>
+        </section>
 
-        <section class="bottom-section">
+        <div class="bottom-section">
+            <h3 style="margin-bottom: 10px; font-family: 'Prompt'; color: #4dabff; font-size: 14px;">ข้อมูลสถิติผู้เข้าชม</h3>
             <div class="dashboard">
                 <div class="stat-box">
-                    <span>รถพร้อมบริการ</span>
-                    <strong>20+ คัน</strong>
+                    <span>ประเภทรถ</span>
+                    <strong>4 Styles</strong>
+                </div>
+                <div class="stat-box">
+                    <span>บริการ</span>
+                    <strong>24 Hrs</strong>
                 </div>
                 <div class="stat-box">
                     <span>ความพึงพอใจ</span>
@@ -57,21 +62,27 @@
                 </div>
             </div>
 
-            <div class="card" style="text-align: center;">
-                <h2 style="font-size: 1rem;">ผู้เข้าชมจากทั่วโลก</h2>
+            <div style="text-align: center; margin-top: 10px;">
+                <p style="font-size: 12px; color: #888; margin-bottom: 5px;">Visitors Worldwide</p>
                 <a href="https://info.flagcounter.com/XXXX">
-                    <img src="https://s11.flagcounter.com/map/XXXX/size_m/txt_ffffff/border_cccccc/pageviews_1/viewers_0/" alt="Flag Counter" border="0" style="max-width: 100%;">
+                    <img src="https://s11.flagcounter.com/count2/XXXX/bg_121212/txt_EEEEEE/border_333333/columns_4/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
                 </a>
             </div>
-        </section>
+        </div>
 
     </main>
 
     <footer>
-        <img src="https://via.placeholder.com/80" alt="ThaiRide">
-        <h3>ThaiRide Travel</h3>
-        <p>บริการด้วยใจ ถึงที่หมายปลอดภัยทุกเส้นทาง</p>
-        <p style="font-size: 0.8rem; margin-top: 20px; color: #888;">© 2026 ThaiRide Travel. All rights reserved.</p>
+        <img src="https://via.placeholder.com/80" alt="ThaiRide Logo">
+        <h2 style="font-family: 'Prompt'; margin-bottom: 10px;">ThaiRide Travel</h2>
+        <p>บริการด้วยใจ ปลอดภัยทุกเส้นทาง</p>
+        <p style="margin-top: 10px; font-size: 14px;">
+            ติดต่อ: 0XX-XXX-XXXX<br>
+            LINE ID: @ThaiRide
+        </p>
+        <div style="margin-top: 20px;">
+            <a href="https://lin.ee/77ixmf5" style="color: #4dabff; text-decoration: none;">แชทผ่าน LINE คลิกที่นี่</a>
+        </div>
     </footer>
 
 </body>
